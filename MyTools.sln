@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.WordCOM", "Framew
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.ProcessUtil", "Framework.ProcessUtil\Framework.ProcessUtil.csproj", "{26A79059-693C-4610-8D4C-303AE96814F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.QRCodeUtil", "Framework.QRCodeUtil\Framework.QRCodeUtil.csproj", "{F7E98CFB-728C-4A65-A186-3CFC1347425C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{26A79059-693C-4610-8D4C-303AE96814F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26A79059-693C-4610-8D4C-303AE96814F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26A79059-693C-4610-8D4C-303AE96814F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7E98CFB-728C-4A65-A186-3CFC1347425C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7E98CFB-728C-4A65-A186-3CFC1347425C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7E98CFB-728C-4A65-A186-3CFC1347425C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7E98CFB-728C-4A65-A186-3CFC1347425C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
