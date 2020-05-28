@@ -75,11 +75,11 @@ namespace Dotnet.WordCOM.Utils
 
         #region 公共方法
 
-        public int AddPictureToWord(string pictureFullName,string bookmark,Tuple<float,float> picSize) {
+        public int AddPictureToWord(string pictureFullName,string bookmark,float width = 0,float height = 0) {
             try
             {
                 Range range= this.GetBookmarkRank(_currentWord, bookmark);
-                this.AddShapePicture(pictureFullName, _currentWord, range, picSize.Item1, picSize.Item2);
+                this.AddPicture(pictureFullName, _currentWord, range,width,height);
             }
             catch (Exception ex)
             {

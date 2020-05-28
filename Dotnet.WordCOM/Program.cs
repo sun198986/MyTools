@@ -17,7 +17,7 @@ namespace Dotnet.WordCOM
             string pictureFullName = string.Format(@"{0}demo\qrcode.jpg", currDir);
             using (WordUtil wordUtil = new WordUtil(outFileFullName, fileFullName))
             {
-                wordUtil.AddPictureToWord(pictureFullName, "QRCode", new Tuple<float, float>(5f, 5f));
+                wordUtil.AddPictureToWord(pictureFullName, "QRCode", 2f,2f);
             }
 
             Console.WriteLine("Hello World!");
