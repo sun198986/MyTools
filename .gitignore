@@ -2,9 +2,13 @@
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
-/.vs/MyTools/v16
-/MyMVC/obj
-/.vs/MyTools/DesignTimeBuild
-/Word.OfficeCOM/obj
-/.vs/MyTools
-/Dotnet.WordCOM/obj/Debug
+/Framework.ProcessUtil/bin/Debug
+/Framework.ProcessUtil/obj/Debug
+/Framework.WordCOM/bin/Debug/Framework.WordCOM.pdb
+/Framework.WordCOM/bin/Debug/Framework.WordCOM.exe.config
+/Framework.WordCOM/bin/Debug/Framework.WordCOM.exe
+/Framework.WordCOM/bin/Debug/Framework.ProcessUtil.pdb
+/Framework.WordCOM/bin/Debug/Framework.ProcessUtil.exe.config
+/Framework.WordCOM/bin/Debug/Framework.ProcessUtil.exe
+/Framework.WordCOM/obj/Debug
+/Framework.WordCOM/bin/Debug/NewFiles
