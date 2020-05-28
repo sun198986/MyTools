@@ -9,10 +9,8 @@ using Range= Microsoft.Office.Interop.Word.Range;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
 
-namespace Word.OfficeCOM.Utils
+namespace Dotnet.WordCOM.Utils
 {
     public class WordUtil : IDisposable
     {
@@ -76,6 +74,20 @@ namespace Word.OfficeCOM.Utils
 
 
         #region 公共方法
+
+        public int AddPictureToWord(string pictureFullName,string bookmark,Tuple<float,float> picSize) {
+            try
+            {
+                Range range= this.GetBookmarkRank(_currentWord, bookmark);
+                this.AddShapePicture(pictureFullName, _currentWord, range, picSize.Item1, picSize.Item2);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            return 1;
+        }
 
         /// <summary>
         /// 获取操作word的页数
@@ -595,6 +607,12 @@ namespace Word.OfficeCOM.Utils
                 image.Height = height;
             }
             return image;
+        }
+
+        private Shape AddShapePicture(string picFileName, Document doc, Range range, float width = 0, float height = 0) {
+            InlineShape image = AddPicture(picFileName, doc, range, width, height);
+            Shape shape= image.ConvertToShape();
+            return shape;
         }
 
         /// <summary>

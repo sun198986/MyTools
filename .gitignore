@@ -6,3 +6,5 @@
 /MyMVC/obj
 /.vs/MyTools/DesignTimeBuild
 /Word.OfficeCOM/obj
+/.vs/MyTools
+/Dotnet.WordCOM/obj/Debug
