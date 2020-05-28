@@ -2,7 +2,7 @@
  **/
 
 using Microsoft.Office.Interop.Word;
-using Range= Microsoft.Office.Interop.Word.Range;
+using Range = Microsoft.Office.Interop.Word.Range;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -72,16 +72,18 @@ namespace Framework.WordCOM.Interface
 
         #region 公共方法
 
-        public int AddPictureToWord(string pictureFullName,string bookmark,float width = 0,float height = 0) {
+
+        public int AddPictureToWord(string pictureFullName, string bookmark, float width = 0, float height = 0)
+        {
             try
             {
-                Range range= this.GetBookmarkRank(_currentWord, bookmark);
-                this.AddShapePicture(pictureFullName, _currentWord, range,width,height);
+                this.AddShapePicture(pictureFullName, _currentWord, GetBookmarkRank(_currentWord, bookmark), width, height);
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                _needWrite = false;
+                Dispose();
+                throw new Exception(string.Format("错误信息:{0}.{1}", ex.StackTrace.ToString(), ex.Message));
             }
             return 1;
         }
@@ -170,7 +172,7 @@ namespace Framework.WordCOM.Interface
         /// 根据书签向word中插入内容
         /// </summary>
         /// <returns></returns>
-        public string InsertContentToWordByBookmark(string content, string bookmark,bool isUnderLine=false)
+        public string InsertContentToWordByBookmark(string content, string bookmark, bool isUnderLine = false)
         {
             try
             {
@@ -607,7 +609,8 @@ namespace Framework.WordCOM.Interface
             return image;
         }
 
-        private Shape AddShapePicture(string picFileName, Document doc, Range range, float width = 0, float height = 0) {
+        private Shape AddShapePicture(string picFileName, Document doc, Range range, float width = 0, float height = 0)
+        {
             range.Select();
             Shape image = doc.Shapes.AddPicture(picFileName, ref _missing, ref _missing, range);
             if (width != 0 && height != 0)

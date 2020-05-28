@@ -20,7 +20,7 @@ namespace Framework.WordCOM
             string pictureFullName = string.Format(@"{0}Demo\qrcode.jpg", currDir);
             using (WordUtil wordUtil = new WordUtil(outFileFullName, fileFullName))
             {
-                wordUtil.AddPictureToWord(pictureFullName, "QRCode", 200f, 200f);
+                wordUtil.AddPictureToWord(pictureFullName, "QRCode", 80f, 80f);
             }
 
             Console.WriteLine("Hello World!");
