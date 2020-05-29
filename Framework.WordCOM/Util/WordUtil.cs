@@ -7,24 +7,24 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Framework.WordCOM.Interface
+namespace Framework.WordCOM.Util
 {
     public class WordUtil : IDisposable
     {
-        private Application _wordApp;//word用程序
-        private Document _currentWord;//当前操作的word
-        private bool _disposed;
-        private bool _needWrite = false;
-        private bool _isSaveAs = false;
-        private string _outFilePath = "";
+        protected Application _wordApp;//word用程序
+        protected Document _currentWord;//当前操作的word
+        protected bool _disposed;
+        protected bool _needWrite = false;
+        protected bool _isSaveAs = false;
+        protected string _outFilePath = "";
 
-        private object _missing = System.Reflection.Missing.Value;
-        private object _objFalse = false;
-        private object _objTrue = true;
-        private object wdReplaceAll = WdReplace.wdReplaceAll;//替换所有文字
-        private object wdReplaceOne = WdReplace.wdReplaceOne;//替换第一个文字
+        protected object _missing = System.Reflection.Missing.Value;
+        protected object _objFalse = false;
+        protected object _objTrue = true;
+        protected object wdReplaceAll = WdReplace.wdReplaceAll;//替换所有文字
+        protected object wdReplaceOne = WdReplace.wdReplaceOne;//替换第一个文字
 
-        private Dictionary<string, Document> _fileDic;
+        protected Dictionary<string, Document> _fileDic;
 
         public WordUtil()
         {
@@ -412,13 +412,13 @@ namespace Framework.WordCOM.Interface
         #endregion
 
         #region 私有方法
-        private void NewApp()
+        protected void NewApp()
         {
             _wordApp = new Application();
         }
 
         //关闭application
-        private void CloseApp()
+        protected void CloseApp()
         {
             object wdSaveOptions = WdSaveOptions.wdDoNotSaveChanges;
             foreach (Document item in _wordApp.Documents)
@@ -430,7 +430,7 @@ namespace Framework.WordCOM.Interface
         }
 
         //创建一个新的word
-        private Document CreatWord()
+        protected Document CreatWord()
         {
             if (_wordApp == null)
                 NewApp();
@@ -438,7 +438,7 @@ namespace Framework.WordCOM.Interface
         }
 
         //打开word
-        private Document OpenWord(string fileFullPath, bool isOtherFormat = false)
+        protected Document OpenWord(string fileFullPath, bool isOtherFormat = false)
         {
             if (_wordApp == null)
                 NewApp();
@@ -480,7 +480,7 @@ namespace Framework.WordCOM.Interface
         }
 
         //关闭word
-        private void CloseWord(Document doc, string fileFulleName = "")
+        protected void CloseWord(Document doc, string fileFulleName = "")
         {
             doc.Close(ref _objFalse, ref _missing, ref _missing);
             if (fileFulleName != null)
@@ -488,13 +488,13 @@ namespace Framework.WordCOM.Interface
         }
 
         //保存word
-        private void SaveWord(Document doc)
+        protected void SaveWord(Document doc)
         {
             doc.Save();
         }
 
         //另存word
-        private void SaveAsWord(Document doc, string outFileFullName)
+        protected void SaveAsWord(Document doc, string outFileFullName)
         {
             //筛选保存格式
             object defFormat = FilterExtendName(outFileFullName);
@@ -524,7 +524,7 @@ namespace Framework.WordCOM.Interface
         /// </summary>
         /// <param name="fileFullName"></param>
         /// <returns></returns>
-        private object FilterExtendName(string fileFullName)
+        protected object FilterExtendName(string fileFullName)
         {
             int index = fileFullName.LastIndexOf('.');
             string extendName = fileFullName.Substring(index, fileFullName.Length - index);
@@ -553,7 +553,7 @@ namespace Framework.WordCOM.Interface
         /// </summary>
         /// <param name="fileFullName"></param>
         /// <returns></returns>
-        private string FilterFileName(string fileFullName)
+        protected string FilterFileName(string fileFullName)
         {
             int index = fileFullName.LastIndexOf('\\');
             return fileFullName.Substring(index, fileFullName.Length - index);
@@ -561,7 +561,7 @@ namespace Framework.WordCOM.Interface
 
 
         //在application内插入文件(合并word)
-        private void InsertWord(string fileName, bool ifBreakPage = false)
+        protected void InsertWord(string fileName, bool ifBreakPage = false)
         {
             if (ifBreakPage)
                 InsertBreakPage(true);
@@ -578,7 +578,7 @@ namespace Framework.WordCOM.Interface
         /// 为当前选中区域添加分页符
         /// </summary>
         /// <param name="isPage"></param>
-        private void InsertBreakPage(bool isPage)
+        protected void InsertBreakPage(bool isPage)
         {
             object unite = WdUnits.wdStory;
             _wordApp.Selection.EndKey(ref unite, ref _missing);
@@ -597,7 +597,7 @@ namespace Framework.WordCOM.Interface
         /// 当前word插入图片
         /// </summary>
         /// <returns></returns>
-        private InlineShape AddPicture(string picFileName, Document doc, Range range, float width = 0, float height = 0)
+        protected InlineShape AddPicture(string picFileName, Document doc, Range range, float width = 0, float height = 0)
         {
             range.Select();
             InlineShape image = doc.InlineShapes.AddPicture(picFileName, ref _missing, ref _missing, range);
@@ -609,7 +609,7 @@ namespace Framework.WordCOM.Interface
             return image;
         }
 
-        private Shape AddShapePicture(string picFileName, Document doc, Range range, float width = 0, float height = 0)
+        protected Shape AddShapePicture(string picFileName, Document doc, Range range, float width = 0, float height = 0)
         {
             range.Select();
             Shape image = doc.Shapes.AddPicture(picFileName, ref _missing, ref _missing, range);
@@ -627,7 +627,7 @@ namespace Framework.WordCOM.Interface
         /// <param name="word"></param>
         /// <param name="bookmark"></param>
         /// <returns></returns>
-        private Range GetBookmarkRank(Document word, string bookmark)
+        protected Range GetBookmarkRank(Document word, string bookmark)
         {
             object bk = bookmark;
             Range bookmarkRank = null;
@@ -645,7 +645,7 @@ namespace Framework.WordCOM.Interface
         /// <param name="word"></param>
         /// <param name="bookmark"></param>
         /// <returns></returns>
-        private Range GetBookmarkReturnNull(Document word, string bookmark)
+        protected Range GetBookmarkReturnNull(Document word, string bookmark)
         {
             object bk = bookmark;
             Range bookmarkRank = null;
@@ -661,7 +661,7 @@ namespace Framework.WordCOM.Interface
         /// word清除域代码格式
         /// </summary>
         /// <returns></returns>
-        private int ClearWordCodeFormat()
+        protected int ClearWordCodeFormat()
         {
             _currentWord.Select();
             ClearCode();
@@ -671,7 +671,7 @@ namespace Framework.WordCOM.Interface
         /// <summary>
         /// 域代码转文本
         /// </summary>
-        private void ClearCode()
+        protected void ClearCode()
         {
             ShowCodesAndUnlink(_currentWord.Content);
             for (int i = 1; i <= _wordApp.Selection.Sections.Count; i++)
@@ -695,14 +695,14 @@ namespace Framework.WordCOM.Interface
         /// 将域代码替换为文本域值
         /// </summary>
         /// <param name="range"></param>
-        private void ShowCodesAndUnlink(Range range)
+        protected void ShowCodesAndUnlink(Range range)
         {
             range.Fields.ToggleShowCodes();
             range.Fields.Unlink();
         }
 
         //全文替换文本 1.文本 2. 页脚 3. 页眉
-        private void Replace(int type, string oldWord, string newWord, int replaceType)
+        protected void Replace(int type, string oldWord, string newWord, int replaceType)
         {
             object repalceTypObj = replaceType == 1 ? wdReplaceOne : wdReplaceAll;
             switch (type)
@@ -824,7 +824,7 @@ namespace Framework.WordCOM.Interface
         /// <param name="startColumn">首单元格的列</param>
         /// <param name="endRow">尾单元格的行</param>
         /// <param name="endColumn">尾单元格的列</param>
-        private void MergeCell(Table table, int startRow, int startColumn, int endRow, int endColumn)
+        protected void MergeCell(Table table, int startRow, int startColumn, int endRow, int endColumn)
         {
             MergeCell(table.Cell(startRow, startColumn), table.Cell(endRow, endColumn));
         }
@@ -834,7 +834,7 @@ namespace Framework.WordCOM.Interface
         /// </summary>
         /// <param name="startCell">首单元格</param>
         /// <param name="endCell">尾单元格</param>
-        private void MergeCell(Cell startCell, Cell endCell)
+        protected void MergeCell(Cell startCell, Cell endCell)
         {
             startCell.Merge(endCell);
         }
@@ -842,7 +842,7 @@ namespace Framework.WordCOM.Interface
         /// <summary>
         /// 当前选中文字加粗居左
         /// </summary>
-        private void FontBoldLeft()
+        protected void FontBoldLeft()
         {
             _wordApp.Selection.Font.Bold = (int)WdConstants.wdToggle;
             _wordApp.Selection.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphLeft;
@@ -853,7 +853,7 @@ namespace Framework.WordCOM.Interface
         /// 设置表格添加边框
         /// </summary>
         /// <param name="table"></param>
-        private void SetTabelFormat(Table table)
+        protected void SetTabelFormat(Table table)
         {
             table.Select();
             table.Borders.Enable = (int)WdLineStyle.wdLineStyleSingle;
@@ -865,7 +865,7 @@ namespace Framework.WordCOM.Interface
         /// <param name="table">表格</param>
         /// <param name="columnNumber">添加序号的列</param>
         /// <param name="isTitle">是否有表头</param>
-        private void AddTableNumber(Table table, int columnNumber, bool isTitle = true)
+        protected void AddTableNumber(Table table, int columnNumber, bool isTitle = true)
         {
             table.Select();
             table.Cell(1, columnNumber).Select();
@@ -893,7 +893,7 @@ namespace Framework.WordCOM.Interface
         /// <summary>
         /// 创建并移动到下一个段落
         /// </summary>
-        private void CreateAndGoToNextParagraph(Range range, bool isCreateParagraph, bool isMove)
+        protected void CreateAndGoToNextParagraph(Range range, bool isCreateParagraph, bool isMove)
         {
             range.Select();
             if (isCreateParagraph)
@@ -912,7 +912,7 @@ namespace Framework.WordCOM.Interface
         /// 插入段落
         /// </summary>
         /// <param name="range"></param>
-        private void InsertParagraph(Range range)
+        protected void InsertParagraph(Range range)
         {
             object contLine = 1;
             object WdLine = WdUnits.wdLine;//换一行;
@@ -924,7 +924,7 @@ namespace Framework.WordCOM.Interface
         /// 设置table格式
         /// </summary>
         /// <param name="table"></param>
-        private void ClearFormatTable(Table table)
+        protected void ClearFormatTable(Table table)
         {
             table.Select();
             if (table.Rows.Count > 0)
@@ -951,7 +951,7 @@ namespace Framework.WordCOM.Interface
         /// 设置table除表头之外的单元格等高
         /// </summary>
         /// <param name="table"></param>
-        private void SetDistributeTable(Table table)
+        protected void SetDistributeTable(Table table)
         {
             int tableRows = table.Rows.Count;
             if (tableRows >= 2)
@@ -970,7 +970,7 @@ namespace Framework.WordCOM.Interface
         /// 根据windows大小设置表格大小
         /// </summary>
         /// <param name="table"></param>
-        private void SetAutoFitContentForTable(Table table)
+        protected void SetAutoFitContentForTable(Table table)
         {
             table.Select();
             _wordApp.Selection.Tables[1].AutoFitBehavior(WdAutoFitBehavior.wdAutoFitContent);

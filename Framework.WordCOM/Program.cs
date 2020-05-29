@@ -1,5 +1,5 @@
 ﻿using Framework.ProcessUtil;
-using Framework.WordCOM.Interface;
+using Framework.WordCOM.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +12,16 @@ namespace Framework.WordCOM
     {
         static void Main(string[] args)
         {
-            ProcessControl processControl = new ConcreteProcessControl();
-            processControl.KillWordProcess();
-            string currDir = AppDomain.CurrentDomain.BaseDirectory;
-            string fileFullName = string.Format(@"{0}Demo\标准模板(新).docx", currDir);
-            string outFileFullName = string.Format(@"{0}NewFiles\{1}.docx", currDir, Guid.NewGuid().ToString());
-            string pictureFullName = string.Format(@"{0}Demo\qrcode.jpg", currDir);
-            using (WordUtil wordUtil = new WordUtil(outFileFullName, fileFullName))
-            {
-                wordUtil.AddPictureToWord(pictureFullName, "QRCode", 80f, 80f);
-            }
+            //添加二维码
+            //QRCodeControl qc = new QRCodeControl();
+            //qc.AddQRCode();
 
-            Console.WriteLine("Hello World!");
-            Console.ReadLine();
+            //单元格右下角添加内容
+            //add content to lower right corner
+
+            AddToLowerRightCorner atl = new AddToLowerRightCorner();
+            atl.ConcreteAdd();
+
         }
     }
 }
