@@ -22,7 +22,7 @@ namespace Framework.WordCOM.Util
 
             using (WordUtilExtensions wordUtil = new WordUtilExtensions(outFileFullName, fileFullName))
             {
-               int result=  wordUtil.AddCellLowerRightCornerContent("ypms","testcontent");
+               int result=  wordUtil.AddCellLowerRightCornerContent("cyxz", "testcontent");
             }
 
             Console.WriteLine("success");

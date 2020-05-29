@@ -19,23 +19,13 @@ namespace Framework.WordCOM.Util
 
         }
 
-        public int AddCellLowerRightCornerContent(string bookmark,string content)
+        public int AddCellLowerRightCornerContent(string bookmark, string content)
         {
             try
             {
-                Range range= this.GetBookmarkRank(_currentWord, bookmark);
+                Range range = this.GetBookmarkRank(_currentWord, bookmark);
                 Cell cell = range.Cells[1];
-                cell.Range.Select();
-
-                object unite = WdUnits.wdLine;
-                _wordApp.Selection.EndKey(ref unite, ref _missing);
-                _wordApp.Selection.TypeParagraph();
-                _wordApp.Selection.TypeText(content);
-                _wordApp.Selection.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
-
-                //Paragraph paragraph= _wordApp.Selection.Paragraphs.Add(range);
-                //_wordApp.Selection.InsertAfter(content);
-                //_wordApp.Selection.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
+                AddCellLowerRightCornerContent(cell, content);
             }
             catch (Exception ex)
             {
@@ -45,5 +35,7 @@ namespace Framework.WordCOM.Util
             }
             return 1;
         }
+
+       
     }
 }

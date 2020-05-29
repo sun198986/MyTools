@@ -13,14 +13,14 @@ namespace Framework.WordCOM
         static void Main(string[] args)
         {
             //添加二维码
-            QRCodeControl qc = new QRCodeControl();
-            qc.AddQRCode();
+            //QRCodeControl qc = new QRCodeControl();
+            //qc.AddQRCode();
 
             //单元格右下角添加内容
             //add content to lower right corner
 
-            //AddToLowerRightCorner atl = new AddToLowerRightCorner();
-            //atl.ConcreteAdd();
+            AddToLowerRightCorner atl = new AddToLowerRightCorner();
+            atl.ConcreteAdd();
 
         }
     }

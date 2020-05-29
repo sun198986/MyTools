@@ -982,6 +982,28 @@ namespace Framework.WordCOM.Util
             _wordApp.Selection.Tables[1].AutoFitBehavior(WdAutoFitBehavior.wdAutoFitContent);
             _wordApp.Selection.Tables[1].AutoFitBehavior(WdAutoFitBehavior.wdAutoFitWindow);
         }
+        /// <summary>
+        /// 单元格右下角添加内容
+        /// </summary>
+        protected void AddCellLowerRightCornerContent(Cell cell, string content)
+        {
+            try
+            {
+                cell.Range.Select();
+                object unite = WdUnits.wdLine;
+                _wordApp.Selection.EndKey(ref unite, ref _missing);
+                _wordApp.Selection.TypeParagraph();
+                _wordApp.Selection.TypeText(content);
+                _wordApp.Selection.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphRight;
+            }
+            catch (Exception ex)
+            {
+                _needWrite = false;
+                Dispose();
+                throw new Exception(string.Format("错误信息:{0}.{1}", ex.StackTrace.ToString(), ex.Message));
+            }
+
+        }
 
         /// <summary>
         /// 根据文件名称结束word进程
