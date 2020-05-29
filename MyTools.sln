@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.ProcessUtil", "Fr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.QRCodeUtil", "Framework.QRCodeUtil\Framework.QRCodeUtil.csproj", "{F7E98CFB-728C-4A65-A186-3CFC1347425C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framwork.FileUtil", "Framwork.FileUtil\Framwork.FileUtil.csproj", "{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.FileUtil", "Framwork.FileUtil\Framework.FileUtil.csproj", "{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.HttpClientUtil", "HttpClientUtil\Framework.HttpClientUtil.csproj", "{0819F903-F115-4719-9F6E-1645B8216A36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0819F903-F115-4719-9F6E-1645B8216A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0819F903-F115-4719-9F6E-1645B8216A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0819F903-F115-4719-9F6E-1645B8216A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0819F903-F115-4719-9F6E-1645B8216A36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

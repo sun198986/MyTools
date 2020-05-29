@@ -73,11 +73,11 @@ namespace Framework.WordCOM.Util
         #region 公共方法
 
 
-        public int AddPictureToWord(string pictureFullName, string bookmark, float width = 0, float height = 0)
+        public int AddPictureToWord(string pictureFullName, string bookmark,float top,float left, float width = 0, float height = 0)
         {
             try
             {
-                this.AddShapePicture(pictureFullName, _currentWord, GetBookmarkRank(_currentWord, bookmark), width, height);
+                this.AddShapePicture(pictureFullName, _currentWord, GetBookmarkRank(_currentWord, bookmark), top,left, width, height);
             }
             catch (Exception ex)
             {
@@ -609,10 +609,16 @@ namespace Framework.WordCOM.Util
             return image;
         }
 
-        protected Shape AddShapePicture(string picFileName, Document doc, Range range, float width = 0, float height = 0)
+        protected Shape AddShapePicture(string picFileName, Document doc, Range range,float top,float left, float width = 0, float height = 0)
         {
             range.Select();
             Shape image = doc.Shapes.AddPicture(picFileName, ref _missing, ref _missing, range);
+            image.RelativeVerticalPosition = WdRelativeVerticalPosition.wdRelativeVerticalPositionPage;
+            image.Top = top;
+            image.RelativeHorizontalPosition = WdRelativeHorizontalPosition.wdRelativeHorizontalPositionPage;
+            image.Left = left;
+            
+            
             if (width != 0 && height != 0)
             {
                 image.Width = width;

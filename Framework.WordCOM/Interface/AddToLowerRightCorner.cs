@@ -1,5 +1,5 @@
 ﻿using Framework.ProcessUtil;
-using Framwork.FileUtil.Interface;
+using Framework.FileUtil.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;

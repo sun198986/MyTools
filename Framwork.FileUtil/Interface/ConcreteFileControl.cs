@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Framwork.FileUtil.Interface
+namespace Framework.FileUtil.Interface
 {
     public class ConcreteFileControl : FileControl
     {
