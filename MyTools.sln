@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.FileUtil", "Framw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.HttpClientUtil", "HttpClientUtil\Framework.HttpClientUtil.csproj", "{0819F903-F115-4719-9F6E-1645B8216A36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.CompressString", "Framework.ZipString\Framework.CompressString.csproj", "{C35B0834-9E76-46E8-961E-56A2BEF26420}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0819F903-F115-4719-9F6E-1645B8216A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0819F903-F115-4719-9F6E-1645B8216A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0819F903-F115-4719-9F6E-1645B8216A36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C35B0834-9E76-46E8-961E-56A2BEF26420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C35B0834-9E76-46E8-961E-56A2BEF26420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C35B0834-9E76-46E8-961E-56A2BEF26420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C35B0834-9E76-46E8-961E-56A2BEF26420}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
