@@ -9,13 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.ProcessUtil", "Fr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.QRCodeUtil", "Framework.QRCodeUtil\Framework.QRCodeUtil.csproj", "{F7E98CFB-728C-4A65-A186-3CFC1347425C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.FileUtil", "Framwork.FileUtil\Framework.FileUtil.csproj", "{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.HttpClientUtil", "HttpClientUtil\Framework.HttpClientUtil.csproj", "{0819F903-F115-4719-9F6E-1645B8216A36}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.CompressString", "Framework.ZipString\Framework.CompressString.csproj", "{C35B0834-9E76-46E8-961E-56A2BEF26420}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.MD5Encrypt", "Framework.MD5Encrypt\Framework.MD5Encrypt.csproj", "{742EEA65-7663-4AED-BFE0-513E4ADE06AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.FileUtil", "Framework.FileUtil\Framework.FileUtil.csproj", "{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.HttpClientUtil", "Framework.HttpClientUtil\Framework.HttpClientUtil.csproj", "{0819F903-F115-4719-9F6E-1645B8216A36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,14 +35,6 @@ Global
 		{F7E98CFB-728C-4A65-A186-3CFC1347425C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7E98CFB-728C-4A65-A186-3CFC1347425C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7E98CFB-728C-4A65-A186-3CFC1347425C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0819F903-F115-4719-9F6E-1645B8216A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0819F903-F115-4719-9F6E-1645B8216A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0819F903-F115-4719-9F6E-1645B8216A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0819F903-F115-4719-9F6E-1645B8216A36}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C35B0834-9E76-46E8-961E-56A2BEF26420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C35B0834-9E76-46E8-961E-56A2BEF26420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C35B0834-9E76-46E8-961E-56A2BEF26420}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +43,14 @@ Global
 		{742EEA65-7663-4AED-BFE0-513E4ADE06AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{742EEA65-7663-4AED-BFE0-513E4ADE06AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{742EEA65-7663-4AED-BFE0-513E4ADE06AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053ADDEE-11E0-4FEB-BA88-5EABFD1EB9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0819F903-F115-4719-9F6E-1645B8216A36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0819F903-F115-4719-9F6E-1645B8216A36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0819F903-F115-4719-9F6E-1645B8216A36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0819F903-F115-4719-9F6E-1645B8216A36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
