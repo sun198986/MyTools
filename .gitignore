@@ -17,7 +17,7 @@
 /Framework.QRCodeUtil/bin/Debug
 /Framework.QRCodeUtil/obj/Debug
 /.vs/MyTools/v15
-/.vs/MyTools/v16/Server/sqlite3
+/.vs/MyTools/v16
 /.vs/MyTools/DesignTimeBuild
 /Dotnet.WordCOM/obj/Debug
 /Framework.WordCOM/bin/Debug/Framwork.FileUtil.pdb
@@ -30,3 +30,5 @@
 /Framework.ZipString/obj/Debug
 /Framework.ZipString/bin/Debug
 /Framework.MD5Encrypt/obj/Debug
+/Framework.HttpClientUtil/obj/Debug
+/Framework.FileUtil/obj/Debug
