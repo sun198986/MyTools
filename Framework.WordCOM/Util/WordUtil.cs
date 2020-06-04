@@ -6,6 +6,7 @@ using Range = Microsoft.Office.Interop.Word.Range;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Framework.WordCOM.Util
 {
@@ -300,10 +301,10 @@ namespace Framework.WordCOM.Util
         /// </summary>
         /// <param name="excelFileFullName">excel文件</param>
         /// <param name="bookmark">书签名称 excel插入位置书签名称 默认为"" 插入文档末尾</param>
-        /// <param name="excelWidht">excel宽</param>
+        /// <param name="excelWidth">excel宽</param>
         /// <param name="excelHeight">excel高</param>
         /// <returns>创建结果或错误信息</returns>
-        public string InsertExcel(string excelFileFullName, string bookmark, int excelWidht = 450, int excelHeight = 200)
+        public string InsertExcel(string excelFileFullName, string bookmark, int excelWidth = 450, int excelHeight = 200)
         {
             if (excelFileFullName.Equals(""))
             {
@@ -339,7 +340,7 @@ namespace Framework.WordCOM.Util
                     ref _missing,
                     ref rangeOLE);//位置
                 sp.Height = excelHeight;//200
-                sp.Width = excelWidht;
+                sp.Width = excelWidth;
             }
             catch (Exception ex)
             {
@@ -354,14 +355,18 @@ namespace Framework.WordCOM.Util
         /// 合并word
         /// </summary>
         /// <returns></returns>
-        public int MerageWord(List<string> fileFullNamelist, bool isPage = false)
+        public int MerageWord(IEnumerable<string> fileFullNameList, bool isPage = false)
         {
+
+            if (fileFullNameList == null)
+                throw new ArgumentNullException(nameof(fileFullNameList));
+            var fullNameList = fileFullNameList as string[] ?? fileFullNameList.ToArray();
             try
             {
                 _currentWord.Activate();
-                for (int i = 0; i < fileFullNamelist.Count; i++)
+                for (int i = 0; i < fullNameList.Length; i++)
                 {
-                    InsertWord(fileFullNamelist[i], isPage ? i > 0 : isPage);
+                    InsertWord(fullNameList[i], isPage && i > 0);
                 }
             }
             catch (Exception ex)
@@ -371,7 +376,7 @@ namespace Framework.WordCOM.Util
                 throw new Exception(string.Format("错误信息:{0}.{1}", ex.StackTrace.ToString(), ex.Message));
             }
 
-            return fileFullNamelist.Count;
+            return fullNameList.Length;
         }
 
         /// <summary>

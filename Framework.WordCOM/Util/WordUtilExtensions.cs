@@ -19,6 +19,9 @@ namespace Framework.WordCOM.Util
 
         }
 
+        /// <summary>
+        /// 在单元格右下角添加内容
+        /// </summary>
         public int AddCellLowerRightCornerContent(string bookmark, string content)
         {
             try
@@ -31,7 +34,34 @@ namespace Framework.WordCOM.Util
             {
                 _needWrite = false;
                 Dispose();
-                throw new Exception(string.Format("错误信息:{0}.{1}", ex.StackTrace.ToString(), ex.Message));
+                throw new Exception($"错误信息:{ex.StackTrace.ToString()}.{ex.Message}");
+            }
+            return 1;
+        }
+
+        public int TestPageHeight(string bookmark)
+        {
+
+            try
+            {
+                Range range = this.GetBookmarkRank(_currentWord, bookmark);
+                
+                range.Select();
+                float cellPosition =   (float)range.Information[WdInformation.wdVerticalPositionRelativeToPage];
+                float pageHeight= range.PageSetup.PageHeight;
+                float footDistance = range.PageSetup.FooterDistance;
+                float cellHeight = range.Cells[1].Height;
+
+                Table table = range.Tables[1];
+                table.Select();
+                float tablePosition = (float)table.Range.Information[WdInformation.wdVerticalPositionRelativeToPage];
+                
+                Console.WriteLine($"cellPositonTop:{cellPosition},pageHeight:{pageHeight},footDistance:{footDistance},cellHeight:{cellHeight},tablePostionTop:{tablePosition}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
             return 1;
         }

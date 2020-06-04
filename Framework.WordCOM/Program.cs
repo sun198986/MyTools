@@ -19,9 +19,14 @@ namespace Framework.WordCOM
             //单元格右下角添加内容
             //add content to lower right corner
 
-            AddToLowerRightCorner atl = new AddToLowerRightCorner();
-            atl.ConcreteAdd();
+            //AddToLowerRightCorner atl = new AddToLowerRightCorner();
+            //atl.ConcreteAdd();
 
+            //CalculatePageHeight cph = new CalculatePageHeight();
+            //cph.calculatePage();
+
+            TestReportControl trc = new TestReportControl();
+            trc.TestReportFunc();
         }
     }
 }
