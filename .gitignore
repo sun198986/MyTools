@@ -34,3 +34,5 @@
 /Framework.FileUtil/obj/Debug
 /Framework.MD5Encrypt/bin/Debug
 /Framework.FileUtil/bin/Debug
+/RegexUtil/bin/Debug/netcoreapp3.1
+/RegexUtil/obj
