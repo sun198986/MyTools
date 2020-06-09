@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Framework.WordCOM.Interface;
 
 namespace Framework.WordCOM
 {
@@ -13,8 +14,8 @@ namespace Framework.WordCOM
         static void Main(string[] args)
         {
             //添加二维码
-            QRCodeControl qc = new QRCodeControl();
-            qc.AddQRCode();
+            // QRCodeControl qc = new QRCodeControl();
+            //qc.AddQRCode();
 
             //单元格右下角添加内容
             //add content to lower right corner
@@ -27,6 +28,10 @@ namespace Framework.WordCOM
 
             //TestReportControl trc = new TestReportControl();
             //trc.TestReportFunc();
+
+            //添加运算符
+            AddOperation ao = new AddOperation();
+            ao.conreteOperation();
         }
     }
 }

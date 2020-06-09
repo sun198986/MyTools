@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interface\AddOperation.cs" />
     <Compile Include="Interface\AddToLowerRightCorner.cs" />
     <Compile Include="Interface\CalculatePageHeight.cs" />
     <Compile Include="Interface\QRCodeControl.cs" />
