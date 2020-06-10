@@ -60,6 +60,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="MyFormulaTemplate\Built-In Building Blocks.dotx" />
+    <None Include="MyFormulaTemplate\Normal.dotm" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
