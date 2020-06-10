@@ -73,37 +73,28 @@ namespace Framework.WordCOM.Util
 
             range.Select();
 
-
+            //Range om = _wordApp.Selection.OMaths.Add(range);
+            //_wordApp.Selection.OMaths.BuildUp();
+            //_wordApp.Selection.OMaths[1].Functions.Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionAcc).Acc.Char = 773;
+            //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
             //_wordApp.Selection.InsertSymbol(-10187, null, true, WdFontBias.wdFontBiasDefault);
-            //_wordApp.Selection.InsertSymbol(-8433, null,true,WdFontBias.wdFontBiasDefault);
-            //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdExtend);
-            ////_wordApp.Selection.InsertSymbol(-10187, null, true, WdFontBias.wdFontBiasDefault);
-            //_wordApp.Selection.InsertSymbol(773, null, true, WdFontBias.wdFontBiasDefault);
+            //_wordApp.Selection.InsertSymbol(-8433, null, true, WdFontBias.wdFontBiasDefault);
 
-
-            ////_wordApp.Selection.InsertSymbol(964, null, true, WdFontBias.wdFontBiasDefault);
-            ////var wdExtend = (object) "wdExtend";
-            ////_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1,WdMovementType.wdExtend);
-            //////Selection.OMaths(1).Functions.Add(Selection.Range, wdOMathFunctionAcc).Acc _.Char = 773
-            ////_wordApp.Selection.OMaths.Add(range);
-            ////_wordApp.Selection.TypeText("τ");
-
-            //// _wordApp.Selection.OMaths.Add(range)
-
-            //_wordApp.Templates.LoadBuildingBlocks();
-            //_wordApp.Templates.get_Item("圆的面积");
             Range om = _wordApp.Selection.OMaths.Add(range);
             _wordApp.Selection.OMaths.BuildUp();
-            _wordApp.Selection.OMaths[1].Functions.Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionAcc).Acc.Char = 773;
-            //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
-            _wordApp.Selection.InsertSymbol(-10187, null, true, WdFontBias.wdFontBiasDefault);
-            _wordApp.Selection.InsertSymbol(-8433, null, true, WdFontBias.wdFontBiasDefault);
-            //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdExtend);
-
-            
-            //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
-            //_wordApp.Selection.TypeText("¦Ó");
-            //_wordApp.Selection.MoveRight(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
+            //_wordApp.Selection.OMaths[1].Functions.Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionDelim,1).Delim.BegChar = 773;
+            var omatchFunc = _wordApp.Selection.OMaths[1].Functions
+                .Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionDelim, 1);
+            omatchFunc.Delim.BegChar = 124;
+            omatchFunc.Delim.SepChar = 0;
+            omatchFunc.Delim.EndChar = 124;
+            omatchFunc.Delim.Grow = true;
+            omatchFunc.Delim.Shape = WdOMathShapeType.wdOMathShapeCentered;
+            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
+            _wordApp.Selection.InsertSymbol(8242, "Cambria Math", true, WdFontBias.wdFontBiasDefault);
+            _wordApp.Selection.InsertAfter("v");
+            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 2, WdMovementType.wdMove);
+            _wordApp.Selection.InsertAfter("F");
 
             return 1;
 
