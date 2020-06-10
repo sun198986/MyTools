@@ -73,28 +73,41 @@ namespace Framework.WordCOM.Util
 
             range.Select();
 
+            #region tao
             //Range om = _wordApp.Selection.OMaths.Add(range);
             //_wordApp.Selection.OMaths.BuildUp();
             //_wordApp.Selection.OMaths[1].Functions.Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionAcc).Acc.Char = 773;
             //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
             //_wordApp.Selection.InsertSymbol(-10187, null, true, WdFontBias.wdFontBiasDefault);
             //_wordApp.Selection.InsertSymbol(-8433, null, true, WdFontBias.wdFontBiasDefault);
+            #endregion
 
-            Range om = _wordApp.Selection.OMaths.Add(range);
-            _wordApp.Selection.OMaths.BuildUp();
-            //_wordApp.Selection.OMaths[1].Functions.Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionDelim,1).Delim.BegChar = 773;
-            var omatchFunc = _wordApp.Selection.OMaths[1].Functions
-                .Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionDelim, 1);
-            omatchFunc.Delim.BegChar = 124;
-            omatchFunc.Delim.SepChar = 0;
-            omatchFunc.Delim.EndChar = 124;
-            omatchFunc.Delim.Grow = true;
-            omatchFunc.Delim.Shape = WdOMathShapeType.wdOMathShapeCentered;
-            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
-            _wordApp.Selection.InsertSymbol(8242, "Cambria Math", true, WdFontBias.wdFontBiasDefault);
-            _wordApp.Selection.InsertAfter("v");
-            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 2, WdMovementType.wdMove);
-            _wordApp.Selection.InsertAfter("F");
+            #region fv
+            //Range om = _wordApp.Selection.OMaths.Add(range);
+            //_wordApp.Selection.OMaths.BuildUp();
+            //var omatchFunc = _wordApp.Selection.OMaths[1].Functions
+            //    .Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionDelim, 1);
+            //omatchFunc.Delim.BegChar = 124;
+            //omatchFunc.Delim.SepChar = 0;
+            //omatchFunc.Delim.EndChar = 124;
+            //omatchFunc.Delim.Grow = true;
+            //omatchFunc.Delim.Shape = WdOMathShapeType.wdOMathShapeCentered;
+            //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
+            //_wordApp.Selection.InsertSymbol(8242, "Cambria Math", true, WdFontBias.wdFontBiasDefault);
+            //_wordApp.Selection.InsertAfter("v");
+            //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 2, WdMovementType.wdMove);
+            //_wordApp.Selection.InsertAfter("F");
+            #endregion
+            #region 插入运算模板
+
+            //_wordApp.Templates
+            //    .get_Item(
+            //        @"C:\Users\33482\AppData\Roaming\Microsoft\Document Building Blocks\2052\16\Built-In Building Blocks.dotx")
+            //    .BuildingBlockEntries.Item("圆的面积").Insert(_wordApp.Selection.Range, null);
+
+            _wordApp.Templates[1]
+                .BuildingBlockEntries.Item("mytemplate").Insert(_wordApp.Selection.Range, null);
+            #endregion
 
             return 1;
 
