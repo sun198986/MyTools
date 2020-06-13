@@ -36,3 +36,8 @@
 /Framework.FileUtil/bin/Debug
 /RegexUtil/bin/Debug/netcoreapp3.1
 /RegexUtil/obj
+/.vs/MyTools/config
+/DotnetCoreFilterDemo/bin/Debug/netcoreapp3.1
+/DotnetCoreFilterDemo/obj
+/DotnetCoreWebApi3.x/obj
+/DotnetCoreWebApi3.x/bin/Debug/netcoreapp3.1
