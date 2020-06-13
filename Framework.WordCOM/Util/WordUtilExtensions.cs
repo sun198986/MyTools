@@ -105,8 +105,20 @@ namespace Framework.WordCOM.Util
             //        @"C:\Users\33482\AppData\Roaming\Microsoft\Document Building Blocks\2052\16\Built-In Building Blocks.dotx")
             //    .BuildingBlockEntries.Item("圆的面积").Insert(_wordApp.Selection.Range, null);
 
-            _wordApp.Templates[1]
-                .BuildingBlockEntries.Item("mytemplate").Insert(_wordApp.Selection.Range, null);
+            //_wordApp.Templates[1]
+            //    .BuildingBlockEntries.Item("mytemplate").Insert(_wordApp.Selection.Range, null);
+            #endregion
+
+            #region UVA
+            Range om = _wordApp.Selection.OMaths.Add(range);
+            _wordApp.Selection.OMaths.BuildUp();
+            _wordApp.Selection.OMaths[1].Functions
+                .Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionScrSub);
+            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 2, WdMovementType.wdMove);
+            _wordApp.Selection.InsertSymbol(-10187, null, true, WdFontBias.wdFontBiasDefault);
+            _wordApp.Selection.InsertSymbol(-8433, null, true, WdFontBias.wdFontBiasDefault);
+            _wordApp.Selection.MoveRight(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
+            _wordApp.Selection.InsertAfter("UVA");
             #endregion
 
             return 1;
