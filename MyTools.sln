@@ -19,10 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.HttpClientUtil", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegexUtil", "RegexUtil\RegexUtil.csproj", "{0EB9F382-5759-47CF-82FA-35389D97C970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCoreFilterDemo", "DotnetCoreWebapiDemo\DotnetCoreFilterDemo.csproj", "{499E0ABC-82CA-4972-947C-729591A88063}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routine.Api", "Routine.Api\Routine.Api.csproj", "{12C11AD4-00BB-4FA9-9A62-25E496A464B4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,14 +57,6 @@ Global
 		{0EB9F382-5759-47CF-82FA-35389D97C970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EB9F382-5759-47CF-82FA-35389D97C970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EB9F382-5759-47CF-82FA-35389D97C970}.Release|Any CPU.Build.0 = Release|Any CPU
-		{499E0ABC-82CA-4972-947C-729591A88063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{499E0ABC-82CA-4972-947C-729591A88063}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{499E0ABC-82CA-4972-947C-729591A88063}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{499E0ABC-82CA-4972-947C-729591A88063}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12C11AD4-00BB-4FA9-9A62-25E496A464B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12C11AD4-00BB-4FA9-9A62-25E496A464B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12C11AD4-00BB-4FA9-9A62-25E496A464B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12C11AD4-00BB-4FA9-9A62-25E496A464B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
