@@ -126,7 +126,7 @@ namespace Routine.Api.Services
                 throw new ArgumentNullException(nameof(companyId));
             }
 
-            var items = _context.Employees.Where(x => x.CompanyId == companyId);
+            var items = _context.Employees.Where(x => x.CompanyId == companyId).Include(nameof(Company));
 
             if (!string.IsNullOrWhiteSpace(parameters.Gender))
             {

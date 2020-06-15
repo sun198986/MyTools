@@ -18,5 +18,7 @@ namespace Routine.Api.Models
 
         public int Age { get; set; }
 
+        public string CompanyName { get; set; }
+
     }
 }
