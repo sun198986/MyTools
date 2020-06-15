@@ -110,15 +110,27 @@ namespace Framework.WordCOM.Util
             #endregion
 
             #region UVA
+            //Range om = _wordApp.Selection.OMaths.Add(range);
+            //_wordApp.Selection.OMaths.BuildUp();
+            //_wordApp.Selection.OMaths[1].Functions
+            //    .Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionScrSub);
+            //_wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 2, WdMovementType.wdMove);
+            //_wordApp.Selection.InsertSymbol(-10187, null, true, WdFontBias.wdFontBiasDefault);
+            //_wordApp.Selection.InsertSymbol(-8433, null, true, WdFontBias.wdFontBiasDefault);
+            //_wordApp.Selection.MoveRight(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
+            //_wordApp.Selection.InsertAfter("UVA");
+            #endregion
+
+            #region λV 
             Range om = _wordApp.Selection.OMaths.Add(range);
             _wordApp.Selection.OMaths.BuildUp();
             _wordApp.Selection.OMaths[1].Functions
                 .Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionScrSub);
             _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 2, WdMovementType.wdMove);
             _wordApp.Selection.InsertSymbol(-10187, null, true, WdFontBias.wdFontBiasDefault);
-            _wordApp.Selection.InsertSymbol(-8433, null, true, WdFontBias.wdFontBiasDefault);
+            _wordApp.Selection.InsertSymbol(-8442, null, true, WdFontBias.wdFontBiasDefault);
             _wordApp.Selection.MoveRight(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
-            _wordApp.Selection.InsertAfter("UVA");
+            _wordApp.Selection.InsertAfter("V");
             #endregion
 
             return 1;
