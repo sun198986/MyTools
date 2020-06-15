@@ -15,19 +15,26 @@ namespace DotnetCoreFilterDemo.Filter
         }
         public override void OnException(ExceptionContext context)
         {
+            //if (!context.ExceptionHandled)
+            //{
+            //    Console.WriteLine($"{context.Exception.Message}");
+            //    context.Result= new JsonResult(new
+            //    {
+            //        Result = false,
+            //        Msg = $"{context.Exception.Message}"
+            //    });
+            //    context.ExceptionHandled = true;
+            //    _logger.LogError(context.Exception.StackTrace);
+            //}
+
             if (!context.ExceptionHandled)
             {
                 Console.WriteLine($"{context.Exception.Message}");
-                context.Result= new JsonResult(new
-                {
-                    Result = false,
-                    Msg = $"{context.Exception.Message}"
-                });
-                context.ExceptionHandled = true;
                 _logger.LogError(context.Exception.StackTrace);
+                context.Result = new BadRequestObjectResult(context.Exception.Message);
+                context.ExceptionHandled = true;
             }
-
-           // base.OnException(context);
+            // base.OnException(context);
         }
 
     }
