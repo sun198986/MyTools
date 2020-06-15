@@ -446,7 +446,7 @@ namespace Framework.WordCOM.TestReport
         /// </summary>
         /// <param name="cell"></param>
         /// <param name="content"></param>
-        public virtual void AddCellLowerRightCornerContent(Cell cell, string content)
+        public new void AddCellLowerRightCornerContent(Cell cell, string content)
         {
             try
             {
