@@ -1,16 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Routine.Api.Entities;
 
 namespace Routine.Api.Data
 {
     public class RoutineDbContext : DbContext
     {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLoggerFactory(ConsoleLoggerFactory);
+            //base.OnConfiguring(optionsBuilder);
+        }
+
         public RoutineDbContext(DbContextOptions<RoutineDbContext> options) : base(options)
         {
-
+            
         }
+
+        
 
         public DbSet<Company> Companies { get; set; }
 
@@ -128,5 +137,14 @@ namespace Routine.Api.Data
                 }
             );
         }
+
+        public static readonly ILoggerFactory ConsoleLoggerFactory =
+            LoggerFactory.Create(builder =>
+            {
+                builder.AddFilter((category, level) =>
+                        category == DbLoggerCategory.Database.Command.Name
+                                   && level == LogLevel.Information)
+                    .AddConsole();
+            });
     }
 }

@@ -201,7 +201,6 @@ namespace Routine.Api.Services
             if (employee == null)
                 throw new ArgumentNullException(nameof(employee));
             _context.Employees.Remove(employee);
-            throw new NotImplementedException();
         }
 
         public async Task<bool> SaveAsync()
