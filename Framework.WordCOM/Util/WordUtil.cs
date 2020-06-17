@@ -414,6 +414,23 @@ namespace Framework.WordCOM.Util
                 throw ex;
             }
         }
+
+
+        public double GetBookmarkHeightProportion(string bookmark)
+        {
+            try
+            {
+                Range range = this.GetBookmarkRank(_currentWord, bookmark);
+                float rangePositionTop = (float)range.Information[WdInformation.wdVerticalPositionRelativeToPage];
+                return rangePositionTop / range.PageSetup.PageHeight;
+            }
+            catch (Exception ex)
+            {
+                _needWrite = false;
+                Dispose();
+                throw new Exception($"错误信息:{ex.StackTrace.ToString()}.{ex.Message}");
+            }
+        }
         #endregion
 
         #region 私有方法

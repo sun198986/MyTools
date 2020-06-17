@@ -20,7 +20,8 @@ namespace Framework.WordCOM.Interface
 
             using (WordUtilExtensions wordUtil = new WordUtilExtensions(outFileFullName, fileFullName))
             {
-                int result = wordUtil.AddOperation("bgbh");
+                //int result = wordUtil.AddOperation("bgbh");
+                wordUtil.GetBookmarkHeightProportion("bgbh");
             }
 
             Console.WriteLine("success");
