@@ -20,7 +20,10 @@ namespace Framework.HttpClientUtil
                 //添加文件参数，参数名为files，文件名为123.png
                 content.Add(new ByteArrayContent(System.IO.File.ReadAllBytes(path)), "fileName", "test.docx");
 
-                result = client.PostAsync(requestUri, content).Result.Content.ReadAsStringAsync().Result;
+                var response = client.PostAsync(requestUri, content).Result;
+                var headers = response.Headers;
+
+                result = response.Content.ReadAsStringAsync().Result;
 
                 Console.WriteLine(result);
                 Console.ReadLine();
