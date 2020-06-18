@@ -43,3 +43,5 @@
 /DotnetCoreWebApi3.x/bin/Debug/netcoreapp3.1
 /DotnetCoreWebApi3.x
 /Framework.HttpClientUtil/bin/Debug
+/DotnetSvcUtil/bin/Debug/netcoreapp3.1
+/DotnetSvcUtil/obj
