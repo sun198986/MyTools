@@ -45,3 +45,5 @@
 /Framework.HttpClientUtil/bin/Debug
 /DotnetSvcUtil/bin/Debug/netcoreapp3.1
 /DotnetSvcUtil/obj
+/LearnGraphQL.Api/bin/Debug/netcoreapp2.1
+/LearnGraphQL.Api/obj
