@@ -134,16 +134,17 @@ namespace Framework.WordCOM.Util
             #endregion
 
             _wordApp.Selection.OMaths[1].Functions
-                .Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionScrSub);
-            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 2, WdMovementType.wdMove);
-            _wordApp.Selection.InsertAfter("d");
+                .Add(_wordApp.Selection.Range, WdOMathFunctionType.wdOMathFunctionScrSubSup);
+            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 3, WdMovementType.wdMove);
+            _wordApp.Selection.Range.InsertAfter("d");
             _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdExtend);
-            
-            _wordApp.Selection.Font.Italic = 0;
-            _wordApp.Selection.Font.Bold = 0;
-            _wordApp.Selection.MoveRight(WdUnits.wdCharacter, 2, WdMovementType.wdMove);
-            _wordApp.Selection.InsertAfter("2");
 
+            _wordApp.Selection.Font.Italic = 0;
+            _wordApp.Selection.MoveRight(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
+            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
+            _wordApp.Selection.Range.InsertAfter("2");
+            _wordApp.Selection.MoveLeft(WdUnits.wdCharacter, 1, WdMovementType.wdMove);
+            _wordApp.Selection.Range.InsertAfter("3");
             return 1;
 
         }
