@@ -50,6 +50,7 @@
     <Compile Include="Interface\AddToLowerRightCorner.cs" />
     <Compile Include="Interface\CalculatePageHeight.cs" />
     <Compile Include="Interface\QRCodeControl.cs" />
+    <Compile Include="Interface\TestTable.cs" />
     <Compile Include="Interface\TestReportControl.cs" />
     <Compile Include="TestReport\StandardReportWordUtil.cs" />
     <Compile Include="Util\WordUtil.cs" />

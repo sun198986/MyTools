@@ -149,5 +149,17 @@ namespace Framework.WordCOM.Util
 
         }
 
+        public int AddTableTest()
+        {
+            _currentWord.Content.Select();
+           Table table=   _wordApp.Selection.Tables.Add(_wordApp.Selection.Range, 1, 2, null, null);
+           table.Borders.Enable = (int)WdLineStyle.wdLineStyleSingle;
+           _wordApp.Selection.MoveDown(WdUnits.wdLine, _wordApp.Selection.Paragraphs.Count, WdMovementType.wdMove);
+           _wordApp.Selection.TypeParagraph();
+           Table table2= _wordApp.Selection.Tables.Add(_wordApp.Selection.Range, 1, 2, null, null);
+           table2.Borders.Enable = (int)WdLineStyle.wdLineStyleSingle;
+            return 1;
+        }
+
     }
 }

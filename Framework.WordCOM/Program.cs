@@ -30,8 +30,12 @@ namespace Framework.WordCOM
             //trc.TestReportFunc();
 
             //添加运算符
-            AddOperation ao = new AddOperation();
-            ao.conreteOperation();
+           // AddOperation ao = new AddOperation();
+           // ao.conreteOperation();
+
+           //测试画表格
+           TestTable tt = new TestTable();
+           tt.TestReportFunc();
         }
     }
 }
