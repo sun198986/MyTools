@@ -20,7 +20,7 @@ namespace Routine.Api.Models
         [MaxLength(50, ErrorMessage = "{0}最大长度不能超过{1}")]
         public string FirstName { get; set; }
 
-        [Display(Name = "姓"), Required(ErrorMessage = "{0}是必填的"), MaxLength(50, ErrorMessage = "{0}最大长度不能超过{1}")]
+       // [Display(Name = "姓"), Required(ErrorMessage = "{0}是必填的"), MaxLength(50, ErrorMessage = "{0}最大长度不能超过{1}")]
         public string LastName { get; set; }
 
         [Display(Name = "性别")]

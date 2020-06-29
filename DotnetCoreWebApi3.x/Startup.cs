@@ -88,7 +88,10 @@ namespace Routine.Api
                 newtonSoftJsonOutputFormatter?.SupportedMediaTypes.Add("application/vnd.company.hateoas+json");
             });
 
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(config =>
+            {
+                config.ForAllMaps((a,b)=>b.ForAllMembers(opt=>opt.Condition((src,dest,sourceMember)=>sourceMember!=null)));
+            },AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddDbContext<RoutineDbContext>(option =>
