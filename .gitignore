@@ -49,3 +49,5 @@
 /LearnGraphQL.Api/obj
 /NLogDemo/obj
 /NLogDemo/bin/Debug/netcoreapp3.1
+/AttributeDemo/obj
+/AttributeDemo/.vscode
