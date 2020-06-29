@@ -47,3 +47,5 @@
 /DotnetSvcUtil/obj
 /LearnGraphQL.Api/bin/Debug/netcoreapp2.1
 /LearnGraphQL.Api/obj
+/NLogDemo/obj
+/NLogDemo/bin/Debug/netcoreapp3.1

@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Routine.Api", "DotnetCoreWe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotnetSvcUtil", "DotnetSvcUtil\DotnetSvcUtil.csproj", "{FEFB9D94-63B8-4B0A-BB09-8CD6584197BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnGraphQL.Api", "LearnGraphQL.Api\LearnGraphQL.Api.csproj", "{030836B4-F612-45C9-8E43-9E5393CF0E1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnGraphQL.Api", "LearnGraphQL.Api\LearnGraphQL.Api.csproj", "{030836B4-F612-45C9-8E43-9E5393CF0E1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLogDemo", "NLogDemo\NLogDemo.csproj", "{7D8FDF80-FF12-4D72-8570-38EB230DAEB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{030836B4-F612-45C9-8E43-9E5393CF0E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{030836B4-F612-45C9-8E43-9E5393CF0E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{030836B4-F612-45C9-8E43-9E5393CF0E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8FDF80-FF12-4D72-8570-38EB230DAEB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8FDF80-FF12-4D72-8570-38EB230DAEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8FDF80-FF12-4D72-8570-38EB230DAEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8FDF80-FF12-4D72-8570-38EB230DAEB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
