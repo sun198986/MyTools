@@ -521,24 +521,30 @@ namespace Framework.WordCOM.Util
             //筛选保存格式
             object defFormat = FilterExtendName(outFileFullName);
             object path = outFileFullName;
-            doc.SaveAs(
-                ref path,      //FileName
-                ref defFormat,     //FileFormat
-                ref _missing,     //LockComments
-                ref _missing,     //PassWord     
-                ref _missing,     //AddToRecentFiles
-                ref _missing,     //WritePassword
-                ref _missing,     //ReadOnlyRecommended
-                ref _missing,     //EmbedTrueTypeFonts
-                ref _missing,     //SaveNativePictureFormat
-                ref _missing,     //SaveFormsData
-                ref _missing,     //SaveAsAOCELetter,
-                ref _missing,     //Encoding
-                ref _objFalse,     //InsertLineBreaks
-                ref _missing,     //AllowSubstitutions
-                ref _missing,     //LineEnding
-                ref _missing      //AddBiDiMarks
-          );
+            if ((WdSaveFormat)defFormat == WdSaveFormat.wdFormatPDF)
+            {
+                doc.ExportAsFixedFormat(outFileFullName, WdExportFormat.wdExportFormatPDF,false,WdExportOptimizeFor.wdExportOptimizeForPrint);
+            }
+            else {
+                doc.SaveAs(
+                    ref path,      //FileName
+                    ref defFormat,     //FileFormat
+                    ref _missing,     //LockComments
+                    ref _missing,     //PassWord     
+                    ref _missing,     //AddToRecentFiles
+                    ref _missing,     //WritePassword
+                    ref _missing,     //ReadOnlyRecommended
+                    ref _missing,     //EmbedTrueTypeFonts
+                    ref _missing,     //SaveNativePictureFormat
+                    ref _missing,     //SaveFormsData
+                    ref _missing,     //SaveAsAOCELetter,
+                    ref _missing,     //Encoding
+                    ref _objFalse,     //InsertLineBreaks
+                    ref _missing,     //AllowSubstitutions
+                    ref _missing,     //LineEnding
+                    ref _missing      //AddBiDiMarks
+                    );
+            }
         }
 
         /// <summary>
