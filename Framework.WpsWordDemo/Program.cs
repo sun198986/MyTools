@@ -19,10 +19,13 @@ namespace Framework.WpsWordDemo
             string outDirctoryUrl = string.Format(@"{0}NewFiles", currDir);
             FileControl fileControl = new ConcreteFileControl();
             fileControl.CreateDirectory(outDirctoryUrl);
-            string outFileFullName = string.Format(@"{0}NewFiles\{1}.docx", currDir, Guid.NewGuid().ToString());
+            string outFileFullName = string.Format(@"{0}NewFiles\{1}.pdf", currDir, Guid.NewGuid().ToString());
             using (ToPdfHelper tph = new ToPdfHelper("docx")) {
-                tph.WordWpsToPdf(fileFullName);
+                tph.WordWpsToPdf(outFileFullName,fileFullName);
             }
+
+            Console.WriteLine("hellow world");
+            Console.ReadLine();
         }
     }
 }

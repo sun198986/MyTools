@@ -14,8 +14,8 @@ namespace Framework.HttpClientUtil
         {
             HttpClientCommit hcc = new HttpClientCommit();
             string currDir = AppDomain.CurrentDomain.BaseDirectory;
-            string fileFullName = string.Format(@"{0}Demo\标准模板(新).docx", currDir);
-            hcc.PostFormFilesAndParam(@"http://localhost:50852/Report/WordConvertPdf", fileFullName);
+            string fileFullName = string.Format(@"{0}Demo\国医检（设）字GYJ2020第3169号(1).docx", currDir);
+            hcc.PostFormFilesAndParam(@"http://192.168.30.209:8989//Report/WordConvertPdf", fileFullName);
         }
     }
 }

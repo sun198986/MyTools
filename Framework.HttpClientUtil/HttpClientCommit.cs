@@ -14,8 +14,8 @@ namespace Framework.HttpClientUtil
                 var content = new MultipartFormDataContent();
 
                 //添加字符串参数，参数名为qq
-                content.Add(new StringContent("123456"), "qrCodeStr");
-                content.Add(new StringContent("孙士杰"), "auditor");
+                //content.Add(new StringContent("123456"), "qrCodeStr");
+                //content.Add(new StringContent("孙士杰"), "auditor");
 
                 //添加文件参数，参数名为files，文件名为123.png
                 content.Add(new ByteArrayContent(System.IO.File.ReadAllBytes(path)), "fileName", "test.docx");
