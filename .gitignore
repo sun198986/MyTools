@@ -54,3 +54,13 @@
 /WordOpenXml/obj
 /WordOpenXml/bin/Debug/netcoreapp3.1
 /AttributeDemo/bin/Debug/netcoreapp3.1
+/Framework.WpsWordDemo/bin/Debug/Framework.WpsWordDemo.pdb
+/Framework.WpsWordDemo/bin/Debug/Framework.WpsWordDemo.exe.config
+/Framework.WpsWordDemo/bin/Debug/Framework.WpsWordDemo.exe
+/Framework.WpsWordDemo/bin/Debug/Framework.ProcessUtil.pdb
+/Framework.WpsWordDemo/bin/Debug/Framework.ProcessUtil.exe.config
+/Framework.WpsWordDemo/bin/Debug/Framework.ProcessUtil.exe
+/Framework.WpsWordDemo/bin/Debug/Framework.FileUtil.pdb
+/Framework.WpsWordDemo/bin/Debug/Framework.FileUtil.exe.config
+/Framework.WpsWordDemo/bin/Debug/Framework.FileUtil.exe
+/Framework.WpsWordDemo/obj/Debug
