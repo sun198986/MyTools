@@ -64,3 +64,5 @@
 /Framework.WpsWordDemo/bin/Debug/Framework.FileUtil.exe.config
 /Framework.WpsWordDemo/bin/Debug/Framework.FileUtil.exe
 /Framework.WpsWordDemo/obj/Debug
+/SwaggerDemo/obj
+/SwaggerDemo/bin/Debug/netcoreapp3.1

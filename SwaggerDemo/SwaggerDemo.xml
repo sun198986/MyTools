@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SwaggerDemo</name>
+    </assembly>
+    <members>
+        <member name="M:SwaggerDemo.Controllers.WeatherForecastController.Get">
+            <summary>
+            默认
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
