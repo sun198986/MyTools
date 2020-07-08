@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Management;
 
 namespace Framework.WordCOM.Util
 {
@@ -24,6 +25,7 @@ namespace Framework.WordCOM.Util
         protected object _objTrue = true;
         protected object wdReplaceAll = WdReplace.wdReplaceAll;//替换所有文字
         protected object wdReplaceOne = WdReplace.wdReplaceOne;//替换第一个文字
+        protected string _fileFullName = "";
 
         protected Dictionary<string, Document> _fileDic;
 
@@ -63,6 +65,7 @@ namespace Framework.WordCOM.Util
                 _currentWord = OpenWord(fileFullName);
             }
 
+            _fileFullName = fileFullName;
             _outFilePath = outFileFullName;
             _isSaveAs = isSaveAs;
 
@@ -523,7 +526,39 @@ namespace Framework.WordCOM.Util
             object path = outFileFullName;
             if ((WdSaveFormat)defFormat == WdSaveFormat.wdFormatPDF)
             {
-                doc.ExportAsFixedFormat(outFileFullName, WdExportFormat.wdExportFormatPDF,false,WdExportOptimizeFor.wdExportOptimizeForPrint);
+                //自定义object类型的布尔值
+                object oTrue = true;
+                object oFalse = false;
+                object copies = 1; //打印份数
+                object printZero = 0;
+                object objOutFileFullName = (object) outFileFullName;
+                object objFileFullName = (object) _fileFullName;
+                object objAllDoc = WdPrintOutRange.wdPrintAllDocument;
+                object objMarkup = WdPrintOutItem.wdPrintDocumentWithMarkup;
+                object objAllPages = WdPrintOutPages.wdPrintAllPages;
+                doc.Activate();
+                doc.Select();
+                _wordApp.ActivePrinter = "CutePDF Writer";
+               
+                doc.PrintOut(
+                    ref oTrue, //Background 此处为true,表示后台打印
+                    ref oFalse,
+                    ref objAllDoc, //Range 页面范围
+                    ref _missing,
+                    ref _missing, //当 Range 设置为 wdPrintFromTo 时的起始页码
+                    ref _missing,//当 Range 设置为 wdPrintFromTo 时的结束页码
+                    ref objMarkup,//
+                    ref copies,  //要打印的份数
+                    ref _missing, ref objAllPages, ref oFalse, ref oTrue, 
+                    ref _missing, 
+                    ref _missing, 
+                    ref printZero, 
+                    ref printZero, 
+                    ref printZero, ref printZero);
+                _wordApp.WindowState = WdWindowState.wdWindowStateMinimize;
+
+                //ManagementScope ms = new ManagementScope(ManagementPath.DefaultPath);
+                //doc.ExportAsFixedFormat(outFileFullName, WdExportFormat.wdExportFormatPDF,false,WdExportOptimizeFor.wdExportOptimizeForPrint);
             }
             else {
                 doc.SaveAs(
