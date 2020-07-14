@@ -64,3 +64,6 @@
 /Framework.WpsWordDemo/bin/Debug/Framework.FileUtil.exe.config
 /Framework.WpsWordDemo/bin/Debug/Framework.FileUtil.exe
 /Framework.WpsWordDemo/obj/Debug
+/Log4net.Demo/bin/Debug/netcoreapp3.1
+/Log4net.Demo/logs
+/Log4net.Demo/obj
