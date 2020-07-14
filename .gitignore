@@ -67,3 +67,5 @@
 /Log4net.Demo/bin/Debug/netcoreapp3.1
 /Log4net.Demo/logs
 /Log4net.Demo/obj
+/SwaggerDemo/obj/Debug/netcoreapp3.1
+/SwaggerDemo/obj
