@@ -9,8 +9,9 @@ namespace WordOpenXml
     {
         static void Main(string[] args)
         {
-            string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Demo\\demo.docx";
-            WordXml.CreateWordDoc(filepath, "你好");
+            //string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Demo\\demo.docx";
+            //WordXml.CreateWordDoc(filepath, "你好");
+            ExcelXml.ExcelTest();
             Console.WriteLine("Hello World!");
         }
     }
