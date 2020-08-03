@@ -8,10 +8,10 @@ namespace WordOpenXml
     {
         public static void ExcelTest()
         {
-            var spreadsheetDocument = SpreadsheetDocument.Create(@"E:\Common_Soft\OpenXml.xlsx", SpreadsheetDocumentType.Workbook);
-            var workbookpart = spreadsheetDocument.AddWorkbookPart();
-            workbookpart.Workbook = new Workbook();
-            WorksheetPart worksheetPart = workbookpart.AddNewPart<WorksheetPart>();
+            using var spreadsheetDocument = SpreadsheetDocument.Create(@"E:\Common_Soft\OpenXml.xlsx", SpreadsheetDocumentType.Workbook);
+            var workbookPart = spreadsheetDocument.AddWorkbookPart();
+            workbookPart.Workbook = new Workbook();
+            WorksheetPart worksheetPart = workbookPart.AddNewPart<WorksheetPart>();
             worksheetPart.Worksheet = new Worksheet(new SheetData());
             Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(new Sheets());
             Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "Sheet1" };
@@ -31,7 +31,7 @@ namespace WordOpenXml
             }
 
 
-            workbookpart.Workbook.Save();
+            workbookPart.Workbook.Save();
             spreadsheetDocument.Close();
         }
     }
