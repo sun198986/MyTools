@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttributeDemo", "AttributeD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.WpsWordDemo", "Framework.WpsWordDemo\Framework.WpsWordDemo.csproj", "{3EFD5F0C-5723-4778-A463-D61970EB40A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4net.Demo", "Log4net.Demo\Log4net.Demo.csproj", "{23A4AB1C-2221-4B00-ADF5-BBB4AFCC8637}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Log4net.Demo", "Log4net.Demo\Log4net.Demo.csproj", "{23A4AB1C-2221-4B00-ADF5-BBB4AFCC8637}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailKitDemo", "MailKitDemo\MailKitDemo.csproj", "{C3EC9E52-0083-4DB0-892F-FE48EB513DD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{23A4AB1C-2221-4B00-ADF5-BBB4AFCC8637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23A4AB1C-2221-4B00-ADF5-BBB4AFCC8637}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23A4AB1C-2221-4B00-ADF5-BBB4AFCC8637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3EC9E52-0083-4DB0-892F-FE48EB513DD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3EC9E52-0083-4DB0-892F-FE48EB513DD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3EC9E52-0083-4DB0-892F-FE48EB513DD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3EC9E52-0083-4DB0-892F-FE48EB513DD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
