@@ -30,7 +30,7 @@ I just wanted to let you know that Monica and I were going to go play some paint
                 client.Connect("smtp.qq.com", 25, false);
 
                 // Note: only needed if the SMTP server requires authentication
-                client.Authenticate("334828328@qq.com", "zwsqtqnbefesbjdi");
+                //client.Authenticate("", "");
 
                 client.Send(message);
                 client.Disconnect(true);
