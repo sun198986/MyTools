@@ -11,7 +11,8 @@ namespace WordOpenXml
         {
             //string filepath = $"{AppDomain.CurrentDomain.BaseDirectory}\\Demo\\demo.docx";
             //WordXml.CreateWordDoc(filepath, "你好");
-            ExcelXml.ExcelTest();
+            //ExcelXml.ImportExcelData();
+            ExcelXml.ExportExcelData<ExcelDataModel>();
             Console.WriteLine("Hello World!");
         }
     }
