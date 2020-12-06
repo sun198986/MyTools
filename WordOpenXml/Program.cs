@@ -21,12 +21,30 @@ namespace WordOpenXml
             //ExcelXml.ExportExcelData<ExcelDataModel>();
             //Console.WriteLine("Hello World!");
 
+
             string docName = @"D:\Document\OpenXml.xlsx";
             string sheetName = "Sheet1";
-            string cell1Name = "A2";
-            string cell2Name = "B2";
 
-            ExcelXml.MergeCells(docName, sheetName, cell1Name, cell2Name);
+            IEnumerable<ExcelDataModel> iel = new List<ExcelDataModel>
+            {
+                new ExcelDataModel("a1","b2","c3","d4","e5","f6","g7","h8","i9","j10"),
+                new ExcelDataModel("a1","b2","c3","d4","e5","f6","g7","h8","i9","j10"),
+                new ExcelDataModel("a1","b2","c3","d4","e5","f6","g7","h8","i9","j10"),
+                new ExcelDataModel("a1","b2","c3","d4","e5","f6","g7","h8","i9","j10"),
+                new ExcelDataModel("a1","b2","c3","d4","e5","f6","g7","h8","i9","j10")
+            };
+
+            ExcelXml.ImportExcelDataForTemplate(docName, sheetName,iel);
+            //ExcelXml.ImportExcelData(docName, iel);
+
+            //string docName = @"D:\Document\OpenXml.xlsx";
+            //string sheetName = "Sheet1";
+            //string cell1Name = "A2";
+            //string cell2Name = "B2";
+            //ExcelXml.MergeCells(docName, sheetName, cell1Name, cell2Name);
+
+            Console.WriteLine("成功");
+            Console.ReadLine();
         }
     }
 }

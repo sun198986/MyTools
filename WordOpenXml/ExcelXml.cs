@@ -5,47 +5,100 @@ using System.Text.RegularExpressions;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using YCBX.Office.ExcelXml;
 
 namespace WordOpenXml
 {
     public static class ExcelXml
     {
         /// <summary>
-        /// 导入数据
+        /// 导入excel数据
         /// </summary>
-        public static void ImportExcelData()
+        public static void ImportExcelData<T>(string fileName,IEnumerable<T> list)
         {
-            using var spreadsheetDocument = SpreadsheetDocument.Create(@"D:\Document\OpenXml.xlsx", SpreadsheetDocumentType.Workbook);
+            using var spreadsheetDocument = SpreadsheetDocument.Create(fileName, SpreadsheetDocumentType.Workbook);
             var workbookPart = spreadsheetDocument.AddWorkbookPart();
             workbookPart.Workbook = new Workbook();
             WorksheetPart worksheetPart = workbookPart.AddNewPart<WorksheetPart>();
-            worksheetPart.Worksheet = new Worksheet(new SheetData());
+            Worksheet worksheet = new Worksheet(new SheetData());
+            worksheetPart.Worksheet = worksheet;
             Sheets sheets = spreadsheetDocument.WorkbookPart.Workbook.AppendChild(new Sheets());
             Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), SheetId = 1, Name = "Sheet1" };
+            
             sheets.Append(sheet);
             var sheetData = worksheetPart.Worksheet.GetFirstChild<SheetData>();
             MergeCells mergeCells = new MergeCells();
 
-            for (int i = 0; i < 10; i++)
+            foreach (T item in list)
             {
                 Row row = new Row();
-                for (int j = 0; j < 10; j++)
+                var property = item.GetType().GetProperties();
+                foreach (var prop in property)
                 {
                     Cell dataCell = new Cell();
-                    dataCell.CellValue = new CellValue($"{i + 1}行{j + 1}列");
+                    dataCell.CellValue = new CellValue(prop.GetValue(item).ToString());
                     dataCell.DataType = new EnumValue<CellValues>(CellValues.String);
                     row.AppendChild(dataCell);
                 }
                 sheetData.Append(row);
             }
 
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    Row row = new Row();
+            //    for (int j = 0; j < 10; j++)
+            //    {
+            //        Cell dataCell = new Cell();
+            //        dataCell.CellValue = new CellValue($"{i + 1}行{j + 1}列");
+            //        dataCell.DataType = new EnumValue<CellValues>(CellValues.String);
+            //        row.AppendChild(dataCell);
+            //    }
+            //    sheetData.Append(row);
+            //}
 
-            workbookPart.Workbook.Save();
+            worksheet.Save();
+            spreadsheetDocument.Close();
+        }
+
+        public static void ImportExcelDataForTemplate<T>(string fileName, string sheetName,IEnumerable<T> list)
+        {
+            using var spreadsheetDocument = SpreadsheetDocument.Open(fileName,true);
+            
+            Worksheet worksheet = GetWorksheet(spreadsheetDocument, sheetName);
+
+            uint rowIndex = 30;
+            
+            var sheetData = worksheet.GetFirstChild<SheetData>();
+            foreach (T item in list)
+            {
+                Row row;
+                if (sheetData.Elements<Row>().Where(r => r.RowIndex == rowIndex).Count()==0)
+                {
+                     row = new Row() { RowIndex = rowIndex };
+                }
+                else {
+                    row = sheetData.Elements<Row>().Where(r => r.RowIndex == rowIndex).FirstOrDefault();
+                   
+                }
+                
+                var property = item.GetType().GetProperties();
+                foreach (var prop in property)
+                {
+                    Cell dataCell = new Cell();
+                    dataCell.CellValue = new CellValue(prop.GetValue(item).ToString());
+                    dataCell.DataType = new EnumValue<CellValues>(CellValues.String);
+                    row.AppendChild(dataCell);
+                }
+                sheetData.Append(row);
+                rowIndex++;
+            }
+
+            worksheet.Save();
             spreadsheetDocument.Close();
         }
 
         /// <summary>
-        /// 导出数据
+        /// 导出excel数据
         /// </summary>
         public static void ExportExcelData<T>() where T:class, new()
         {
@@ -152,6 +205,11 @@ namespace WordOpenXml
             WorksheetPart worksheetPart = (WorksheetPart)document.WorkbookPart
                 .GetPartById(sheets.First().Id);
             return worksheetPart.Worksheet;
+
+
+            //Worksheet;
+            //Sheet
+            //WorksheetPart
         }
 
         // Create a spreadsheet cell.   
@@ -175,7 +233,80 @@ namespace WordOpenXml
             return match.Value;
         }
 
-        
+        private static void NewMethod(uint row, int column, string text, SharedStringTablePart shareStringPart, WorksheetPart worksheetPart)
+        {
+            #region 将文本插入到SharedStringTablePart中
+
+            int index = 0;
+
+            //遍历SharedStringTable中的所有项。如果文本已经存在，则返回其索引。
+            foreach (SharedStringItem item in shareStringPart.SharedStringTable.Elements<SharedStringItem>())
+            {
+                if (item.InnerText == text)
+                    break;
+                index++;
+            }
+
+            //这部分没有正文。创建SharedStringItem并返回它的索引。
+            shareStringPart.SharedStringTable.AppendChild(new SharedStringItem(new DocumentFormat.OpenXml.Spreadsheet.Text(text)));
+
+            #endregion
+
+            #region 将单元格A1插入工作表
+
+            Worksheet worksheet = worksheetPart.Worksheet;
+            SheetData sheetData = worksheet.GetFirstChild<SheetData>();
+
+            string columnName = ExcelAlphabet.ColumnToABC(column);
+            uint rowIndex = row;
+
+            string cellReference = columnName + rowIndex;
+
+            //如果工作表不包含具有指定行索引的行，则插入一行
+            Row rowobj;
+            if (sheetData.Elements<Row>().Where(r => r.RowIndex == rowIndex).Count() != 0)
+            {
+                rowobj = sheetData.Elements<Row>().Where(r => r.RowIndex == rowIndex).First();
+            }
+            else
+            {
+                rowobj = new Row() { RowIndex = rowIndex };
+                sheetData.Append(rowobj);
+            }
+
+            Cell newCell2;
+            //如果没有具有指定列名的单元格，则插入一个。
+            if (rowobj.Elements<Cell>().Where(c => c.CellReference.Value == columnName + rowIndex).Count() > 0)
+            {
+                newCell2 = rowobj.Elements<Cell>().Where(c => c.CellReference.Value == cellReference).First();
+            }
+            else
+            {
+                //细胞必须按照细胞参考的顺序排列。确定在何处插入新单元格。
+                Cell refCell = null;
+                foreach (Cell item in rowobj.Elements<Cell>())
+                {
+                    if (item.CellReference.Value.Length == cellReference.Length)
+                    {
+                        if (string.Compare(item.CellReference.Value, cellReference, true) > 0)
+                        {
+                            refCell = item;
+                            break;
+                        }
+                    }
+                }
+
+                Cell newCell = new Cell() { CellReference = cellReference };
+                rowobj.InsertBefore(newCell, refCell);
+
+                newCell2 = newCell;
+            }
+            #endregion
+
+            //设置单元格A1的值
+            newCell2.CellValue = new CellValue(index.ToString());
+            newCell2.DataType = new EnumValue<CellValues>(CellValues.SharedString);
+        }
     }
 
     
