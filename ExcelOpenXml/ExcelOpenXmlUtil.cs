@@ -40,122 +40,78 @@ namespace ExcelOpenXml
 
 
         //导入数据
-        public void ImportExcelDataForTemplate<T>(IEnumerable<T> list)
+        public void ImportExcelDataForTemplate<T>(IEnumerable<T> list,uint rowIndex)
         {
             //打开可编辑的excel
             OpenExcel(true);
 
             Worksheet worksheet = GetWorksheet(_spreadsheetDocument, _sheetName);
 
-            uint rowIndex = 10;
-            int columnIndex = 5;
-
-            string columnName = ExcelAlphabet.ColumnToABC(columnIndex);
-
             var sheetData = worksheet.GetFirstChild<SheetData>();
-            for (int i = 0; i < list.Count(); i++)
+            //遍历行
+            for (var i = 0; i < list.Count(); i++)
             {
-                rowIndex++;
-                string cellReference;
-                //行
                 var item = list.ToList()[i];
+                uint cellRowIndex = rowIndex + (uint)i;
                 Row row;
-                if (sheetData.Elements<Row>().Where(r => r.RowIndex == rowIndex).Count() == 0)
+                //行不存在
+                if (sheetData.Elements<Row>().Where(r => r.RowIndex == cellRowIndex).Count() == 0)
                 {
-                    row = new Row() { RowIndex = rowIndex };
-                    var property = item.GetType().GetProperties();
-                    for (int j = 0; j < property.Length; j++)
-                    {
-                        //列
-                        var prop = property[j];
-                        var value = prop.GetValue(item).ToString();
-                        Cell dataCell;
-
-                        cellReference = ExcelAlphabet.ColumnToABC(columnIndex + j) + rowIndex;
-
-                        if (row.Elements<Cell>().Where(c => c.CellReference.Value == cellReference).Count() > 0)
-                        {
-                            dataCell = row.Elements<Cell>().Where(c => c.CellReference.Value == cellReference).First();
-                        }
-                        else
-                        {
-                            Cell refCell = null;
-                            foreach (Cell cellItem in row.Elements<Cell>())
-                            {
-                                if (cellItem.CellReference.Value.Length == cellReference.Length)
-                                {
-                                    //判断前一个cell是否存在
-                                    if (string.Compare(cellItem.CellReference.Value, cellReference, true) > 0)
-                                    {
-                                        refCell = cellItem;
-                                        break;
-                                    }
-                                }
-                            }
-                            Cell newCell = new Cell() { CellReference = cellReference };
-                            dataCell = newCell;
-                            if (refCell != null)
-                                row.InsertBefore(dataCell, refCell);
-                            else {
-                                row.AppendChild(dataCell);
-                            }
-                        }
-
-                        dataCell.CellValue = new CellValue(value);
-                        dataCell.DataType = new EnumValue<CellValues>(CellValues.String);
-                    }
+                    row = new Row() { RowIndex = cellRowIndex };
                     sheetData.Append(row);
                 }
+                //行已存在
                 else
                 {
-                    row = sheetData.Elements<Row>().Where(r => r.RowIndex == rowIndex).FirstOrDefault();
-                    row.RemoveAllChildren();
-                    var property = item.GetType().GetProperties();
-                    for (int j = 0; j < property.Length; j++)
+                    row = sheetData.Elements<Row>().Where(r => r.RowIndex == cellRowIndex).FirstOrDefault();
+                }
+
+                //遍历插入数据 列上插入
+                var property = item.GetType().GetProperties();
+                for (int j = 0; j < property.Length; j++)
+                {
+                    var prop = property[j];
+                    var cellColumnIndex = j + 1;
+
+                    string reference = GetCellName(cellRowIndex, cellColumnIndex);
+
+                    Cell dataCell = new Cell { CellReference = reference };
+                    //如果行上的单元格已存在,修改单元格内容
+                    if (row.Elements<Cell>().Where(c => c.CellReference!=null && c.CellReference.Value == reference).Count() > 0)
                     {
-                        //列
-                        var prop = property[j];
-                        var value = prop.GetValue(item).ToString();
-                        Cell dataCell;
-
-                        cellReference = ExcelAlphabet.ColumnToABC(columnIndex + j) + rowIndex;
-
-                        if (row.Elements<Cell>().Where(c => c.CellReference.Value == cellReference).Count() > 0)
+                        dataCell = row.Elements<Cell>().Where(s => s.CellReference == reference).FirstOrDefault();
+                    }
+                    //不存在就将单元格插入
+                    else
+                    {
+                        //判断单元格的插入顺序
+                        Cell refCell = null;
+                        foreach (Cell cellItem in row.Elements<Cell>())
                         {
-                            dataCell = row.Elements<Cell>().Where(c => c.CellReference.Value == cellReference).First();
-                        }
-                        else
-                        {
-                            Cell refCell = null;
-                            foreach (Cell cellItem in row.Elements<Cell>())
+                            if (cellItem.CellReference.Value.Length == reference.Length)
                             {
-                                if (cellItem.CellReference.Value.Length == cellReference.Length)
+                                if (string.Compare(cellItem.CellReference.Value, reference, true) > 0)
                                 {
-                                    if (string.Compare(cellItem.CellReference.Value, cellReference, true) < 0)
-                                    {
-                                        refCell = cellItem;
-                                        break;
-                                    }
+                                    refCell = cellItem;
+                                    break;
                                 }
                             }
-                            Cell newCell = new Cell() { CellReference = cellReference };
-                            dataCell = newCell;
-                            if (refCell != null)
-                                row.InsertBefore(newCell, refCell);
-                            else
-                            {
-                                row.AppendChild(dataCell);
-                            }
                         }
-
-                        dataCell.CellValue = new CellValue(value);
-                        dataCell.DataType = new EnumValue<CellValues>(CellValues.String);
+                        //如果没有内容就在最后追加
+                        if (refCell == null)
+                            row.AppendChild(dataCell);
+                        //如果需要插入内容的单元格后有内容,就在前边插入
+                        else
+                            row.InsertBefore(dataCell, refCell);
                     }
+                    dataCell.CellValue = new CellValue(prop.GetValue(item).ToString());
+                    dataCell.DataType = new EnumValue<CellValues>(CellValues.String);
                 }
             }
 
+            //遍历完之后合并单元格
 
-            worksheet.Save();
+            _spreadsheetDocument.Save();
         }
 
 
@@ -244,13 +200,10 @@ namespace ExcelOpenXml
             worksheet.Save();
         }
 
-        private string GetCellName(int rowIndex, int columnIndex)
+        private string GetCellName(uint rowIndex, int columnIndex)
         {
-
-            return "";
+            return ExcelAlphabet.ColumnToABC(columnIndex) + rowIndex;
         }
-
-
 
         // Create a spreadsheet cell.   
         private void CreateSpreadsheetCell(Worksheet worksheet, string cellName)
