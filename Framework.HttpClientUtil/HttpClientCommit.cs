@@ -31,5 +31,17 @@ namespace Framework.HttpClientUtil
 
             return result;
         }
+
+        public string GetAsync(string requestUri,params string[] para) {
+            string result = "";
+            using (HttpClient client = new HttpClient()) {
+                var response = client.GetAsync(requestUri).Result;
+                result= response.Content.ReadAsStringAsync().Result;
+                Console.WriteLine(result);
+                Console.ReadLine();
+            }
+            return result;
+        
+        }
     }
 }
