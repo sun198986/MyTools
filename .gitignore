@@ -76,3 +76,5 @@
 /Framework.File.TXT/bin/Debug
 /ExcelOpenXml/obj
 /ExcelOpenXml/bin/Debug/netcoreapp3.1
+/MSSQLDBFirst/obj
+/MSSQLDBFirst/bin/Debug/netcoreapp3.1
