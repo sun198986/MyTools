@@ -3,6 +3,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -180,15 +181,20 @@ namespace ExcelOpenXml
                     this.MergeCells(item.StartCell, item.EndCell);
                 }
             }
-           
             _spreadsheetDocument.Save();
+
         }
 
 
         //打开一个excel文档
         private void OpenExcel(bool isEditor)
         {
-            _spreadsheetDocument = SpreadsheetDocument.Open(_fileFullName, isEditor);
+            if (!File.Exists(_fileFullName))
+                NewCreate();
+            else {
+                _spreadsheetDocument = SpreadsheetDocument.Open(_fileFullName, isEditor);
+            }
+            
         }
 
 
@@ -224,7 +230,6 @@ namespace ExcelOpenXml
             sheets.Append(sheet);
 
             workbookpart.Workbook.Save();
-            //_spreadsheetDocument.Close();
         }
 
 
