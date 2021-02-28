@@ -45,8 +45,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcelOpenXml", "ExcelOpenXm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSSQLDBFirst", "MSSQLDBFirst\MSSQLDBFirst.csproj", "{0D660EA5-329B-4F38-94F1-17C284CB740C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateDemo", "DelegateDemo\DelegateDemo.csproj", "{E47E9D77-AC6A-4A5C-B810-76849FEBD92C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,10 +135,6 @@ Global
 		{0D660EA5-329B-4F38-94F1-17C284CB740C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D660EA5-329B-4F38-94F1-17C284CB740C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D660EA5-329B-4F38-94F1-17C284CB740C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E47E9D77-AC6A-4A5C-B810-76849FEBD92C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E47E9D77-AC6A-4A5C-B810-76849FEBD92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E47E9D77-AC6A-4A5C-B810-76849FEBD92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E47E9D77-AC6A-4A5C-B810-76849FEBD92C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
