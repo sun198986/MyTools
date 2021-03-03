@@ -35,12 +35,11 @@ namespace ExperienceCalculate
         private void ExPerienceItem_Load(object sender, EventArgs e)
         {
             m_IsLoading = true;
-            this.content.Text = ProjectContent.Content;
+            this.content.Text = Index.ToString()+"."+ProjectContent.Content;
             this.textBox1.Text = ProjectContent.Interval.ToString();
             this.comboBox1.DataSource = new BindingSource(LevelList, null);
             this.comboBox1.SelectedItem = comboBox1.Items.Cast<ExperienceLevel>().FirstOrDefault(p => p.LevelId == ProjectContent.LevelId);
             m_IsLoading = false;
-            this.index.Text = Index.ToString();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

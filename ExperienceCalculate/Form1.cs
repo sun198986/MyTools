@@ -67,7 +67,7 @@ namespace ExperienceCalculate
             for (int i = 0; i < _contentList.Count; i++)
             {
                 ExPerienceItem exPerienceItem1 = new ExPerienceItem(i + 1, _contentList[i], _levelList);
-                exPerienceItem1.Location = new Point(30, 20+i* 65);
+                exPerienceItem1.Location = new Point(30, 20+i* 55);
                 exPerienceItem1.Parent = this.groupBox2;
                 this.groupBox2.Controls.Add(exPerienceItem1);
                 
@@ -118,9 +118,7 @@ namespace ExperienceCalculate
             int coe2 = int.Parse(this.textBox2.Text);
             //钻石
             int coe3 = int.Parse(this.textBox3.Text);
-            //大师
-            int coe4 = int.Parse(this.textBox4.Text);
-            n = (double)result / (1 + 1 * Math.Pow(2, coe1) + 1 * Math.Pow(2, coe2) + 1 * Math.Pow(2, coe3) + 1 * Math.Pow(2, coe4));
+            n = (double)result / (1 + 1 * Math.Pow(2, coe1) + 1 * Math.Pow(2, coe2) + 1 * Math.Pow(2, coe3));
 
             //青铜
             var list = new List<Result>();
@@ -152,13 +150,6 @@ namespace ExperienceCalculate
             int needDays4 = int.Parse(Math.Round(n * 1 * Math.Pow(2, coe3) / pointEveryDay, 0).ToString());
             var result4 = new Result("钻石", start4,end4,needDays4);
             list.Add(result4);
-            //
-            double ds = double.Parse(this.textBoxds.Text);
-            double start5 = end4 + 1;
-            double end5 = end4 + n * 1 * Math.Pow(2, coe4)*ds;
-            int needDays5 = int.Parse(Math.Round(n * 1 * Math.Pow(2, coe4) / pointEveryDay, 0).ToString());
-            var result5 = new Result("大师", start5,end5,needDays5);
-            list.Add(result5);
 
 
 
@@ -170,7 +161,7 @@ namespace ExperienceCalculate
                 this.panel1.Controls.Add(exPerienceItem1);
             }
 
-            this.textBox8.Text = end5.ToString();
+            this.textBox8.Text = end4.ToString();
         }
 
 
