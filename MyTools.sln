@@ -47,6 +47,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSSQLDBFirst", "MSSQLDBFirs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExperienceCalculate", "ExperienceCalculate\ExperienceCalculate.csproj", "{7AD3B403-9614-466F-93D8-4C3C0E7CC9A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUN.DOTNET31.WebAPI", "SUN.DOTNET31.WebAPI\SUN.DOTNET31.WebAPI.csproj", "{C6E7AE91-535F-430B-831D-41116D728DDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{7AD3B403-9614-466F-93D8-4C3C0E7CC9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AD3B403-9614-466F-93D8-4C3C0E7CC9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AD3B403-9614-466F-93D8-4C3C0E7CC9A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E7AE91-535F-430B-831D-41116D728DDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E7AE91-535F-430B-831D-41116D728DDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E7AE91-535F-430B-831D-41116D728DDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E7AE91-535F-430B-831D-41116D728DDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
