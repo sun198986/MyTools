@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace EFCore.DB2.Demo.Entities
 {
     [Table("DB2ADMIN.COMPANY")]
-    public class Company
+    public partial class Company
     {
         [Key]
         public string Id { get; set; }
@@ -30,6 +30,8 @@ namespace EFCore.DB2.Demo.Entities
 
         public string Updater { get; set; }
 
-        public ICollection<Employee> Employees { get; set; }
+        public IEnumerable<Employee> Employees { get; set; }
+
+        public CompanyDoc CompanyDoc { get; set; }
     }
 }

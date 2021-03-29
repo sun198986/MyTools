@@ -23,13 +23,31 @@ namespace EFCore.DB2.Demo.Controllers
         /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Index() {
-
-            return BadRequest();
+            var list = await _companyRepository.GetCompanyExtends();
+            return Ok(list);
         }
 
         [HttpPost]
         public async void Add(Company company) {
             await _companyRepository.Add(company);
+        }
+
+        [HttpPost("addEmployee")]
+        public async void AddEmployee(Employee employee)
+        {
+            await _companyRepository.AddEmployee(employee);
+        }
+
+        [HttpPost("addPoint")]
+        public async void AddPoint(Point point)
+        {
+            await _companyRepository.AddPoint(point);
+        }
+
+        [HttpPost("addCompanyDoc")]
+        public async void AddCompanyDoc(CompanyDoc companyDoc)
+        {
+            await _companyRepository.AddCompanyDoc(companyDoc);
         }
     }
 }

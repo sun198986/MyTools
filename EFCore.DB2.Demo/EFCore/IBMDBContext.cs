@@ -34,6 +34,10 @@ namespace EFCore.DB2.Demo.EFCore
 
         public DbSet<Employee> Employees { get; set; }
 
+        public DbSet<Point> Points { get; set; }
+
+        public DbSet<CompanyDoc> CompanyDocs { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -47,10 +51,20 @@ namespace EFCore.DB2.Demo.EFCore
             modelBuilder.Entity<Employee>().Property(x => x.FirstName).IsRequired().HasMaxLength(50);
             modelBuilder.Entity<Employee>().Property(x => x.LastName).IsRequired().HasMaxLength(50);
 
+            modelBuilder.Entity<CompanyDoc>().HasOne(x => x.Company)
+                .WithOne(x => x.CompanyDoc)
+                .HasForeignKey<CompanyDoc>(x => x.CompanyId);
+
             modelBuilder.Entity<Employee>().HasOne(x => x.Company)
                 .WithMany(x => x.Employees)
                 .HasForeignKey(x => x.CompanyId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Point>().HasOne(x => x.Employee)
+                .WithMany(x => x.Points)
+                .HasForeignKey(x => x.EmployeeId);
+
+            
         }
     }
 }

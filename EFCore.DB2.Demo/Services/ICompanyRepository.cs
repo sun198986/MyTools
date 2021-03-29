@@ -8,6 +8,15 @@ namespace EFCore.DB2.Demo.Services
 {
     public interface ICompanyRepository
     {
+
+        Task<IEnumerable<CompanyExtend>> GetCompanyExtends();
+
         Task Add(Company company);
+
+        Task AddEmployee(Employee employee);
+
+        Task AddPoint(Point point);
+
+        Task AddCompanyDoc(CompanyDoc companyDoc);
     }
 }
