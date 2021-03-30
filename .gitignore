@@ -82,3 +82,5 @@
 /ExperienceCalculate/bin
 /SUN.DOTNET31.WebAPI/obj
 /SUN.DOTNET31.WebAPI/bin/Debug/netcoreapp3.1
+/EFCore.DB2.Demo/obj
+/EFCore.DB2.Demo/bin/Debug/netcoreapp3.1
