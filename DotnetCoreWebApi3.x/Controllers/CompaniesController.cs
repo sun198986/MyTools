@@ -103,10 +103,7 @@ namespace Routine.Api.Controllers
                 };
                 return Ok(linkedCollectionResource);
             }
-            else
-            {
                 return Ok(companyDtos.ShapeData(parameters.Fields));
-            }
         }
         [Produces("application/json", "application/vnd.company.hateoas+json",
             "application/vnd.company.company.full+json",

@@ -84,3 +84,14 @@
 /SUN.DOTNET31.WebAPI/bin/Debug/netcoreapp3.1
 /EFCore.DB2.Demo/obj
 /EFCore.DB2.Demo/bin/Debug/netcoreapp3.1
+/Dapper.DB2.Demo/obj/Debug
+/Dapper.DB2.Demo/bin
+/DelegateDemo/bin/Debug/netcoreapp3.1
+/DelegateDemo/obj
+/ReceviceDemo/bin/Debug/netcoreapp3.1
+/ReceviceDemo/obj
+/SendDemo/obj
+/SendDemo/bin/Debug/netcoreapp3.1
+/ThreadDemo/bin/Debug/netcoreapp3.1
+/ThreadDemo/obj
+/packages
