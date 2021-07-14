@@ -95,3 +95,5 @@
 /ThreadDemo/bin/Debug/netcoreapp3.1
 /ThreadDemo/obj
 /packages
+/WebAPITest1/obj
+/WebAPITest2/obj
