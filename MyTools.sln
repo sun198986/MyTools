@@ -55,11 +55,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadDemo", "ThreadDemo\Th
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateDemo", "DelegateDemo\DelegateDemo.csproj", "{613495D4-063F-426C-9899-5DEBA018B811}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper.DB2.Demo", "Dapper.DB2.Demo\Dapper.DB2.Demo.csproj", "{72162396-DBF3-4904-9702-86EC1C7CC92F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendDemo", "SendDemo\SendDemo.csproj", "{09AB651D-C149-4372-8394-D775A89AE8AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendDemo", "SendDemo\SendDemo.csproj", "{09AB651D-C149-4372-8394-D775A89AE8AA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceviceDemo", "ReceviceDemo\ReceviceDemo.csproj", "{4C6B758A-7600-4481-83F2-D2ABE0AAD7C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReceviceDemo", "ReceviceDemo\ReceviceDemo.csproj", "{4C6B758A-7600-4481-83F2-D2ABE0AAD7C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,10 +169,6 @@ Global
 		{613495D4-063F-426C-9899-5DEBA018B811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{613495D4-063F-426C-9899-5DEBA018B811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{613495D4-063F-426C-9899-5DEBA018B811}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72162396-DBF3-4904-9702-86EC1C7CC92F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72162396-DBF3-4904-9702-86EC1C7CC92F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72162396-DBF3-4904-9702-86EC1C7CC92F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72162396-DBF3-4904-9702-86EC1C7CC92F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{09AB651D-C149-4372-8394-D775A89AE8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{09AB651D-C149-4372-8394-D775A89AE8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09AB651D-C149-4372-8394-D775A89AE8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
