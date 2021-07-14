@@ -97,3 +97,14 @@
 /packages
 /WebAPITest1/obj
 /WebAPITest2/obj
+/WebAPITest1/bin
+/Framework.ZipString/obj/Release
+/Framework.WpsWordDemo/obj/Release
+/Framework.WordCOM/obj/Release
+/Framework.QRCodeUtil/obj/Release
+/Framework.ProcessUtil/obj/Release
+/Framework.MD5Encrypt/obj/Release
+/Framework.HttpClientUtil/obj/Release
+/Framework.FileUtil/obj/Release
+/Framework.File.TXT/obj/Release
+/ExperienceCalculate/obj/Release
