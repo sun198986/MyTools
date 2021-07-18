@@ -108,3 +108,6 @@
 /Framework.FileUtil/obj/Release
 /Framework.File.TXT/obj/Release
 /ExperienceCalculate/obj/Release
+/DBTool/bin/Debug/netcoreapp3.1
+/DBTool/obj
+/.vs/MyTools/v17

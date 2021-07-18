@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using DBTool.Models;
+@using System.Collections.Generic;
+@using System.Diagnostics;
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p><input type="button" value="点击"/></p>
+    <p>@ViewBag.Message</p>
+
+    <table border="1">
+        <tr>
+            <th>空间</th>
+            <th>表</th>
+        </tr>
+        @{
+            foreach (SyscatTable i in @ViewBag.TempList)
+            {
+                <tr>
+                    <td>@i.TabSchema</td>
+                    <td>@i.TabName</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
