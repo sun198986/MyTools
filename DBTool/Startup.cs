@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DBTool.DB;
+using DBTool.Helpers;
 
 namespace DBTool
 {
@@ -25,9 +26,10 @@ namespace DBTool
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDBContext>((p)=> {
-               return new DapperDBContext("Database=U_PMASS;UID=MASSER1;PWD=8Om7.bN8v;Server=10.236.198.73");
+               return new DapperDBContext(Configuration.GetConnectionString("Test"));
             });
             services.AddControllersWithViews();
+            services.AddScoped<StringHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

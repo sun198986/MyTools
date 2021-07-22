@@ -4,17 +4,20 @@
 @using DBTool.Models;
 @using System.Collections.Generic;
 @using System.Diagnostics;
+@model DBTool.Models.SyscatTable;
 <javascript>
 
 </javascript>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    @*<form id="askform" action="@Url.Action("Modify")" method="post">
-
+    <form id="askform" action="@Url.Action("Modify")" method="post">
+        <p>命名空间:<input name="NameSapce" type="text"/></p>
+        <p>类名:<input name="ClassName" type="text"/></p>
+        <p>TabSchema:<input name="SyscatTable.TabSchema" readonly="readonly" type="text" value="@Model.TabSchema"/></p>
+        <p>TabName:<input name="SyscatTable.TabName" readonly="readonly" type="text" value="@Model.TabName"/></p>
         <input type="submit" />
-    </form>*@
+    </form>
 
-    @Html.ActionLink("提交", "Modify", (List<SyscatColumn>)ViewBag.ColList);
     <div style="float:left;">
         <table border="1">
             <tr>
