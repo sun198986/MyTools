@@ -25,7 +25,7 @@ namespace DBTool
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDBContext>((p)=> {
-               return new DapperDBContext("Database=testdb;UID=DB2INST1;PWD=123456;Server=192.168.241.128");
+               return new DapperDBContext("Database=U_PMASS;UID=MASSER1;PWD=8Om7.bN8v;Server=10.236.198.73");
             });
             services.AddControllersWithViews();
         }

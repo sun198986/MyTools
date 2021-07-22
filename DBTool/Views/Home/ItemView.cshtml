@@ -9,23 +9,30 @@
 </javascript>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <form id="askform" action="@Url.Action("Index")" method="get">
-        <p>Schema:<input type="text" name="TabSchema" id="schema" /> TableName<input type="text" name="TabName" id="tableName" /><input type="submit" action="submit" value="提交" /></p>
-    </form>
+    @*<form id="askform" action="@Url.Action("Modify")" method="post">
+
+        <input type="submit" />
+    </form>*@
+
+    @Html.ActionLink("提交", "Modify", (List<SyscatColumn>)ViewBag.ColList);
     <div style="float:left;">
-        <table border="1" style="float:left">
+        <table border="1">
             <tr>
                 <th>空间</th>
                 <th>表</th>
-                <th>操作</th>
+                <th>列名字</th>
+                <th>类型</th>
+                <th>长度</th>
             </tr>
             @{
-                foreach (SyscatTable i in @ViewBag.TempList)
+                foreach (SyscatColumn i in @ViewBag.ColList)
                 {
                     <tr>
                         <td>@i.TabSchema</td>
                         <td>@i.TabName</td>
-                        <td>@Html.ActionLink("查看", "ItemView", i)</td>
+                        <td>@i.ColName</td>
+                        <td>@i.TypeName</td>
+                        <td>@i.Length</td>
                     </tr>
                 }
             }
