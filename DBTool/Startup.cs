@@ -26,7 +26,7 @@ namespace DBTool
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDBContext>((p)=> {
-               return new DapperDBContext(Configuration.GetConnectionString("Test"));
+               return new DapperDBContext(Configuration.GetConnectionString("MASS"));
             });
             services.AddControllersWithViews();
             services.AddScoped<StringHelper>();

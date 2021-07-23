@@ -52,14 +52,14 @@ namespace DBTool.Controllers
         /// <returns></returns>
         public async Task<IActionResult> ItemView(SyscatTable syscatTable)
         {
-            var list = await _context.QueryAsync<SyscatColumn>($"select TABSCHEMA,TABNAME,COLNAME,TYPENAME,LENGTH from syscat.COLUMNS where TABSCHEMA='{syscatTable.TabSchema}' and TABNAME='{syscatTable.TabName}';");
+            var list = await _context.QueryAsync<SyscatColumn>($"select TABSCHEMA,TABNAME,COLNAME,TYPENAME,LENGTH from syscat.COLUMNS where TABSCHEMA='{syscatTable.TabSchema}' and TABNAME='{syscatTable.TabName}' order by COLNO;");
             ViewBag.ColList = list;
             return View(syscatTable);
         }
 
         public async Task<IActionResult> Modify(TabViewModel tabView)
         {
-            var list = await _context.QueryAsync<SyscatColumn>($"select TABSCHEMA,TABNAME,COLNAME,TYPENAME,LENGTH from syscat.COLUMNS where TABSCHEMA='{tabView.SyscatTable.TabSchema}' and TABNAME='{tabView.SyscatTable.TabName}';");
+            var list = await _context.QueryAsync<SyscatColumn>($"select TABSCHEMA,TABNAME,COLNAME,TYPENAME,LENGTH from syscat.COLUMNS where TABSCHEMA='{tabView.SyscatTable.TabSchema}' and TABNAME='{tabView.SyscatTable.TabName}' order by COLNO;");
 
             var path = System.AppDomain.CurrentDomain.BaseDirectory + @"\ModelFiles";
             string cusnamespace = tabView.NameSapce ?? "DBTool.Models";
@@ -72,7 +72,9 @@ namespace DBTool.Controllers
             string filePath = Path.Combine(path,filename);
             FileStream fsFile=System.IO.File.Create(filePath);
             fsFile.Close();
-           
+
+            System.IO.File.AppendAllText(filePath, $"using System;\n");
+            System.IO.File.AppendAllText(filePath, "\n");
             System.IO.File.AppendAllText(filePath, $"namespace {cusnamespace}\n");
             System.IO.File.AppendAllText(filePath, "{\n");
             System.IO.File.AppendAllText(filePath, $"\tpublic class {className}\n");

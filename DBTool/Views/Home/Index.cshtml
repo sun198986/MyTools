@@ -11,7 +11,7 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <form id="askform" action="@Url.Action("Index")" method="get">
-        <p>Schema:<input type="text" name="TabSchema" id="schema" value="@ViewBag.TabSchema"/> TableName:<input type="text" name="TabName" id="tableName" value="@ViewBag.TabName" /><input type="submit" action="submit" value="提交" /></p>
+        <p>Schema:<input type="text" name="TabSchema" id="schema" value="DB2ADMIN" readonly="readonly"/> TableName:<input type="text" name="TabName" id="tableName" value="@ViewBag.TabName" /><input type="submit" action="submit" value="查询" /></p>
     </form>
     <div style="float:left;">
         <table border="1" style="float:left">
