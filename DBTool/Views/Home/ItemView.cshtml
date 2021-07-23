@@ -10,17 +10,19 @@
 </javascript>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <form id="askform" action="@Url.Action("Modify")" method="post">
-        <p>命名空间:<input name="NameSapce" type="text"/></p>
-        <p>类名:<input name="ClassName" type="text"/></p>
-        <p>TabSchema:<input name="SyscatTable.TabSchema" readonly="readonly" type="text" value="@Model.TabSchema"/></p>
-        <p>TabName:<input name="SyscatTable.TabName" readonly="readonly" type="text" value="@Model.TabName"/></p>
-        <input type="submit" />
-    </form>
-
-    <div style="float:left;">
-        <table border="1">
+    <div class="row" style="margin-bottom:20px">
+        <form id="askform" action="@Url.Action("Modify")" method="post">
+            命名空间:<input name="NameSapce" type="text"/>
+            类名:<input name="ClassName" type="text"/>
+            TabSchema:<input name="SyscatTable.TabSchema" readonly="readonly" type="text" value="@Model.TabSchema"/>
+            TabName:<input name="SyscatTable.TabName" readonly="readonly" type="text" value="@Model.TabName"/>
+            <input type="submit" />
+        </form>
+    </div>
+    <div class="row">
+        <table border="1" class="table">
             <tr>
+                <th></th>
                 <th>空间</th>
                 <th>表</th>
                 <th>列名字</th>
@@ -31,6 +33,7 @@
                 foreach (SyscatColumn i in @ViewBag.ColList)
                 {
                     <tr>
+                        <td><input type="checkbox"/></td>
                         <td>@i.TabSchema</td>
                         <td>@i.TabName</td>
                         <td>@i.ColName</td>
