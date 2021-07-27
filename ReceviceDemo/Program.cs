@@ -9,15 +9,10 @@ namespace ReceviceDemo
     {
         static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() { UserName = "sunshijie", Password = "1qaz@WSX", HostName = "192.168.241.132", Port = AmqpTcpEndpoint.UseDefaultPort};
+            var factory = new ConnectionFactory() { UserName = "sunshijie", Password = "123456", HostName = "192.168.241.128", Port = AmqpTcpEndpoint.UseDefaultPort};
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "hello",
-                    durable: false,
-                    exclusive: false,
-                    autoDelete: false,
-                    arguments: null);
 
                 var consumer = new EventingBasicConsumer(channel);
                 consumer.Received += (model, ea) =>
