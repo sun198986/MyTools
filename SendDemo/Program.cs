@@ -8,7 +8,7 @@ namespace SendDemo
     {
         static void Main(string[] args)
         {
-            var factory = new ConnectionFactory() { UserName="sunshijie",Password= "123456", HostName = "192.168.241.128",Port= AmqpTcpEndpoint.UseDefaultPort };
+            var factory = new ConnectionFactory() { UserName= "massuser1", Password= "mass.2021", HostName = "192.168.40.128",Port= AmqpTcpEndpoint.UseDefaultPort };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {

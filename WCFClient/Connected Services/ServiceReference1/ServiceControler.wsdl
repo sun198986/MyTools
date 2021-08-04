@@ -1,0 +1,2047 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceControler" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IApplicationModule_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IApplication_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IModule_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRole_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRolePermission_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IPermission_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICompany_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDepartment_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IGroup_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRoleDetail_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IUserRole_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IToken_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IProxy_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IUser_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IAuthorizedLog_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMenu_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8888/ServiceControler?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8888/ServiceControler?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8888/ServiceControler?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MUAS.Service" />
+      <xsd:import schemaLocation="http://localhost:8888/ServiceControler?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8888/ServiceControler?xsd=xsd4" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApplicationModule_GetApplicationModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationModule" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_GetApplicationModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationModuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_ModuleInApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModuleInApplication" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_ModuleInApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModuleInApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_GetApplicationByModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationByModule" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_GetApplicationByModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationByModuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_ApplicationAddMoudles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplicationAddMoudles" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_ApplicationAddMoudles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplicationAddMoudlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_ApplicationRemoveMoudles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplicationRemoveMoudles" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationModule_ApplicationRemoveMoudles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplicationRemoveMoudlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_GetApplicationByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationByID" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_GetApplicationByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_GetApplicationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationList" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_GetApplicationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_AddApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddApplication" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_AddApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_ModifyApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyApplication" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_ModifyApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_DeleteApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApplication" />
+  </wsdl:message>
+  <wsdl:message name="IApplication_DeleteApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModule_GetModuleByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModuleByID" />
+  </wsdl:message>
+  <wsdl:message name="IModule_GetModuleByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModuleByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModule_GetModuleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModuleList" />
+  </wsdl:message>
+  <wsdl:message name="IModule_GetModuleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModuleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IModule_ModifyModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyModule" />
+  </wsdl:message>
+  <wsdl:message name="IModule_ModifyModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyModuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRole_GetRoleByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByID" />
+  </wsdl:message>
+  <wsdl:message name="IRole_GetRoleByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRole_GetRoleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleList" />
+  </wsdl:message>
+  <wsdl:message name="IRole_GetRoleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRole_CloseRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseRole" />
+  </wsdl:message>
+  <wsdl:message name="IRole_CloseRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRole_AddRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRole" />
+  </wsdl:message>
+  <wsdl:message name="IRole_AddRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRole_ModifyRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyRole" />
+  </wsdl:message>
+  <wsdl:message name="IRole_ModifyRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRole_DeleteRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRole" />
+  </wsdl:message>
+  <wsdl:message name="IRole_DeleteRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRole_GetRoleIDByLoginUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleIDByLoginUser" />
+  </wsdl:message>
+  <wsdl:message name="IRole_GetRoleIDByLoginUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleIDByLoginUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolePermission_GetRolePermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolePermission" />
+  </wsdl:message>
+  <wsdl:message name="IRolePermission_GetRolePermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolePermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolePermission_GrantRolePermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GrantRolePermissions" />
+  </wsdl:message>
+  <wsdl:message name="IRolePermission_GrantRolePermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GrantRolePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRolePermission_RetracRolePermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetracRolePermissions" />
+  </wsdl:message>
+  <wsdl:message name="IRolePermission_RetracRolePermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetracRolePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_GetPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermission" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_GetPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_GetPermissionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionList" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_GetPermissionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_AddPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermission" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_AddPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_ModifyPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPermission" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_ModifyPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_GetUserPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPermission" />
+  </wsdl:message>
+  <wsdl:message name="IPermission_GetUserPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserPermissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_GetCompanyByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyByID" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_GetCompanyByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_GetCompanyList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyList" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_GetCompanyList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_AddCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_AddCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_ModifyCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_ModifyCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_DeleteCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompany" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_DeleteCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_GetCompanyListFlag_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyListFlag" />
+  </wsdl:message>
+  <wsdl:message name="ICompany_GetCompanyListFlag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyListFlagResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_GetDepartmentByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentByID" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_GetDepartmentByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_GetDepartmentListByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentListByName" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_GetDepartmentListByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentListByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_AddDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_AddDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_ModifyDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_ModifyDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_DeleteDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepartment" />
+  </wsdl:message>
+  <wsdl:message name="IDepartment_DeleteDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetGroupByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupByID" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetGroupByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetGroupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupList" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetGroupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetMyGroupList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyGroupList" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetMyGroupList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyGroupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_AddGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_AddGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_ModifyGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyGroup" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_ModifyGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_DeleteGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_DeleteGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_GetRoleDetailByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleDetailByUser" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_GetRoleDetailByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleDetailByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_GetRoleDetailByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleDetailByID" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_GetRoleDetailByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleDetailByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_GetRoleDetailList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleDetailList" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_GetRoleDetailList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleDetailListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_AddRoleDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleDetail" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_AddRoleDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRoleDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_ModifyRoleDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyRoleDetail" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_ModifyRoleDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyRoleDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_DeleteRoleDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleDetail" />
+  </wsdl:message>
+  <wsdl:message name="IRoleDetail_DeleteRoleDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoleDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRole_GetUserRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRole" />
+  </wsdl:message>
+  <wsdl:message name="IUserRole_GetUserRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRole_GrantUserRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUserRole_GrantUserRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GrantUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRole_RetracUserRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetracUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="IUserRole_RetracUserRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetracUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserRole_GetUserRoleByApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleByApp" />
+  </wsdl:message>
+  <wsdl:message name="IUserRole_GetUserRoleByApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoleByAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_TestLink_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestLink" />
+  </wsdl:message>
+  <wsdl:message name="IToken_TestLink_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestLinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_GetDateTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateTime" />
+  </wsdl:message>
+  <wsdl:message name="IToken_GetDateTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_InsertToToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertToToken" />
+  </wsdl:message>
+  <wsdl:message name="IToken_InsertToToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertToTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_LoginOutGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginOutGuid" />
+  </wsdl:message>
+  <wsdl:message name="IToken_LoginOutGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginOutGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_getPopedomByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPopedomByUser" />
+  </wsdl:message>
+  <wsdl:message name="IToken_getPopedomByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPopedomByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_getCompanyIDByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCompanyIDByUser" />
+  </wsdl:message>
+  <wsdl:message name="IToken_getCompanyIDByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCompanyIDByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_getCompanyIDByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCompanyIDByUserID" />
+  </wsdl:message>
+  <wsdl:message name="IToken_getCompanyIDByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCompanyIDByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_ValidateGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGuid" />
+  </wsdl:message>
+  <wsdl:message name="IToken_ValidateGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_GetUserByGUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByGUID" />
+  </wsdl:message>
+  <wsdl:message name="IToken_GetUserByGUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByGUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IToken_GetGroupIDByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupIDByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IToken_GetGroupIDByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupIDByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetProtyByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProtyByID" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetProtyByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProtyByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_AddProxy_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProxy" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_AddProxy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProxyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_ModifyProxy_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyProxy" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_ModifyProxy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyProxyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_UpdateByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateByID" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_UpdateByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetEndDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEndDate" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetEndDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEndDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetPopedom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPopedom" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetPopedom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPopedomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetAppPopedom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppPopedom" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetAppPopedom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppPopedomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetAllByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllByUser" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetAllByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetAllByUserNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllByUserNew" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetAllByUserNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllByUserNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetReportPopedom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportPopedom" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetReportPopedom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportPopedomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetReportByAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportByAgent" />
+  </wsdl:message>
+  <wsdl:message name="IProxy_GetReportByAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportByAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_ActingLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActingLogin" />
+  </wsdl:message>
+  <wsdl:message name="IUser_ActingLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActingLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetAllNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNew" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetAllNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetAllWithDeleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWithDeleted" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetAllWithDeleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllWithDeletedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUserByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByName" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUserByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Add_InputMessage">
+    <wsdl:part name="parameters" element="tns:Add" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Add_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Modify_InputMessage">
+    <wsdl:part name="parameters" element="tns:Modify" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Modify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Close_InputMessage">
+    <wsdl:part name="parameters" element="tns:Close" />
+  </wsdl:message>
+  <wsdl:message name="IUser_Close_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetModulePermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModulePermissions" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetModulePermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModulePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUserByApp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByApp" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetUserByApp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizedLog_GetAuthorizedLogInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthorizedLogInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizedLog_GetAuthorizedLogInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuthorizedLogInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMenu_GetMenuByModuleName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuByModuleName" />
+  </wsdl:message>
+  <wsdl:message name="IMenu_GetMenuByModuleName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuByModuleNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IApplicationModule">
+    <wsdl:operation name="GetApplicationModule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationModule/GetApplicationModule" message="tns:IApplicationModule_GetApplicationModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationModule/GetApplicationModuleResponse" message="tns:IApplicationModule_GetApplicationModule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModuleInApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationModule/ModuleInApplication" message="tns:IApplicationModule_ModuleInApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationModule/ModuleInApplicationResponse" message="tns:IApplicationModule_ModuleInApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationByModule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationModule/GetApplicationByModule" message="tns:IApplicationModule_GetApplicationByModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationModule/GetApplicationByModuleResponse" message="tns:IApplicationModule_GetApplicationByModule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplicationAddMoudles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationModule/ApplicationAddMoudles" message="tns:IApplicationModule_ApplicationAddMoudles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationModule/ApplicationAddMoudlesResponse" message="tns:IApplicationModule_ApplicationAddMoudles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplicationRemoveMoudles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplicationModule/ApplicationRemoveMoudles" message="tns:IApplicationModule_ApplicationRemoveMoudles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplicationModule/ApplicationRemoveMoudlesResponse" message="tns:IApplicationModule_ApplicationRemoveMoudles_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IApplication">
+    <wsdl:operation name="GetApplicationByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplication/GetApplicationByID" message="tns:IApplication_GetApplicationByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplication/GetApplicationByIDResponse" message="tns:IApplication_GetApplicationByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplication/GetApplicationList" message="tns:IApplication_GetApplicationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplication/GetApplicationListResponse" message="tns:IApplication_GetApplicationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplication/AddApplication" message="tns:IApplication_AddApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplication/AddApplicationResponse" message="tns:IApplication_AddApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplication/ModifyApplication" message="tns:IApplication_ModifyApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplication/ModifyApplicationResponse" message="tns:IApplication_ModifyApplication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApplication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApplication/DeleteApplication" message="tns:IApplication_DeleteApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApplication/DeleteApplicationResponse" message="tns:IApplication_DeleteApplication_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IModule">
+    <wsdl:operation name="GetModuleByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModule/GetModuleByID" message="tns:IModule_GetModuleByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModule/GetModuleByIDResponse" message="tns:IModule_GetModuleByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModuleList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModule/GetModuleList" message="tns:IModule_GetModuleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModule/GetModuleListResponse" message="tns:IModule_GetModuleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyModule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IModule/ModifyModule" message="tns:IModule_ModifyModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IModule/ModifyModuleResponse" message="tns:IModule_ModifyModule_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRole">
+    <wsdl:operation name="GetRoleByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRole/GetRoleByID" message="tns:IRole_GetRoleByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRole/GetRoleByIDResponse" message="tns:IRole_GetRoleByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRole/GetRoleList" message="tns:IRole_GetRoleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRole/GetRoleListResponse" message="tns:IRole_GetRoleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRole/CloseRole" message="tns:IRole_CloseRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRole/CloseRoleResponse" message="tns:IRole_CloseRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRole/AddRole" message="tns:IRole_AddRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRole/AddRoleResponse" message="tns:IRole_AddRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRole/ModifyRole" message="tns:IRole_ModifyRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRole/ModifyRoleResponse" message="tns:IRole_ModifyRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRole/DeleteRole" message="tns:IRole_DeleteRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRole/DeleteRoleResponse" message="tns:IRole_DeleteRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleIDByLoginUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRole/GetRoleIDByLoginUser" message="tns:IRole_GetRoleIDByLoginUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRole/GetRoleIDByLoginUserResponse" message="tns:IRole_GetRoleIDByLoginUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRolePermission">
+    <wsdl:operation name="GetRolePermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolePermission/GetRolePermission" message="tns:IRolePermission_GetRolePermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolePermission/GetRolePermissionResponse" message="tns:IRolePermission_GetRolePermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GrantRolePermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolePermission/GrantRolePermissions" message="tns:IRolePermission_GrantRolePermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolePermission/GrantRolePermissionsResponse" message="tns:IRolePermission_GrantRolePermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetracRolePermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRolePermission/RetracRolePermissions" message="tns:IRolePermission_RetracRolePermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRolePermission/RetracRolePermissionsResponse" message="tns:IRolePermission_RetracRolePermissions_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPermission">
+    <wsdl:operation name="GetPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermission/GetPermission" message="tns:IPermission_GetPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermission/GetPermissionResponse" message="tns:IPermission_GetPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermission/GetPermissionList" message="tns:IPermission_GetPermissionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermission/GetPermissionListResponse" message="tns:IPermission_GetPermissionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermission/AddPermission" message="tns:IPermission_AddPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermission/AddPermissionResponse" message="tns:IPermission_AddPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermission/ModifyPermission" message="tns:IPermission_ModifyPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermission/ModifyPermissionResponse" message="tns:IPermission_ModifyPermission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPermission/GetUserPermission" message="tns:IPermission_GetUserPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPermission/GetUserPermissionResponse" message="tns:IPermission_GetUserPermission_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ICompany">
+    <wsdl:operation name="GetCompanyByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompany/GetCompanyByID" message="tns:ICompany_GetCompanyByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompany/GetCompanyByIDResponse" message="tns:ICompany_GetCompanyByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompany/GetCompanyList" message="tns:ICompany_GetCompanyList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompany/GetCompanyListResponse" message="tns:ICompany_GetCompanyList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompany/AddCompany" message="tns:ICompany_AddCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompany/AddCompanyResponse" message="tns:ICompany_AddCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompany/ModifyCompany" message="tns:ICompany_ModifyCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompany/ModifyCompanyResponse" message="tns:ICompany_ModifyCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompany">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompany/DeleteCompany" message="tns:ICompany_DeleteCompany_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompany/DeleteCompanyResponse" message="tns:ICompany_DeleteCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyListFlag">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICompany/GetCompanyListFlag" message="tns:ICompany_GetCompanyListFlag_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICompany/GetCompanyListFlagResponse" message="tns:ICompany_GetCompanyListFlag_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IDepartment">
+    <wsdl:operation name="GetDepartmentByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartment/GetDepartmentByID" message="tns:IDepartment_GetDepartmentByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartment/GetDepartmentByIDResponse" message="tns:IDepartment_GetDepartmentByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentListByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartment/GetDepartmentListByName" message="tns:IDepartment_GetDepartmentListByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartment/GetDepartmentListByNameResponse" message="tns:IDepartment_GetDepartmentListByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartment/AddDepartment" message="tns:IDepartment_AddDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartment/AddDepartmentResponse" message="tns:IDepartment_AddDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartment/ModifyDepartment" message="tns:IDepartment_ModifyDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartment/ModifyDepartmentResponse" message="tns:IDepartment_ModifyDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDepartment/DeleteDepartment" message="tns:IDepartment_DeleteDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDepartment/DeleteDepartmentResponse" message="tns:IDepartment_DeleteDepartment_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IGroup">
+    <wsdl:operation name="GetGroupByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroup/GetGroupByID" message="tns:IGroup_GetGroupByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroup/GetGroupByIDResponse" message="tns:IGroup_GetGroupByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroup/GetGroupList" message="tns:IGroup_GetGroupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroup/GetGroupListResponse" message="tns:IGroup_GetGroupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyGroupList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroup/GetMyGroupList" message="tns:IGroup_GetMyGroupList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroup/GetMyGroupListResponse" message="tns:IGroup_GetMyGroupList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroup/AddGroup" message="tns:IGroup_AddGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroup/AddGroupResponse" message="tns:IGroup_AddGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroup/ModifyGroup" message="tns:IGroup_ModifyGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroup/ModifyGroupResponse" message="tns:IGroup_ModifyGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGroup/DeleteGroup" message="tns:IGroup_DeleteGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGroup/DeleteGroupResponse" message="tns:IGroup_DeleteGroup_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRoleDetail">
+    <wsdl:operation name="GetRoleDetailByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleDetail/GetRoleDetailByUser" message="tns:IRoleDetail_GetRoleDetailByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleDetail/GetRoleDetailByUserResponse" message="tns:IRoleDetail_GetRoleDetailByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleDetailByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleDetail/GetRoleDetailByID" message="tns:IRoleDetail_GetRoleDetailByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleDetail/GetRoleDetailByIDResponse" message="tns:IRoleDetail_GetRoleDetailByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleDetailList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleDetail/GetRoleDetailList" message="tns:IRoleDetail_GetRoleDetailList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleDetail/GetRoleDetailListResponse" message="tns:IRoleDetail_GetRoleDetailList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRoleDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleDetail/AddRoleDetail" message="tns:IRoleDetail_AddRoleDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleDetail/AddRoleDetailResponse" message="tns:IRoleDetail_AddRoleDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyRoleDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleDetail/ModifyRoleDetail" message="tns:IRoleDetail_ModifyRoleDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleDetail/ModifyRoleDetailResponse" message="tns:IRoleDetail_ModifyRoleDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoleDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleDetail/DeleteRoleDetail" message="tns:IRoleDetail_DeleteRoleDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleDetail/DeleteRoleDetailResponse" message="tns:IRoleDetail_DeleteRoleDetail_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUserRole">
+    <wsdl:operation name="GetUserRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRole/GetUserRole" message="tns:IUserRole_GetUserRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRole/GetUserRoleResponse" message="tns:IUserRole_GetUserRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GrantUserRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRole/GrantUserRoles" message="tns:IUserRole_GrantUserRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRole/GrantUserRolesResponse" message="tns:IUserRole_GrantUserRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetracUserRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRole/RetracUserRoles" message="tns:IUserRole_RetracUserRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRole/RetracUserRolesResponse" message="tns:IUserRole_RetracUserRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleByApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserRole/GetUserRoleByApp" message="tns:IUserRole_GetUserRoleByApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserRole/GetUserRoleByAppResponse" message="tns:IUserRole_GetUserRoleByApp_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IToken">
+    <wsdl:operation name="TestLink">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/TestLink" message="tns:IToken_TestLink_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/TestLinkResponse" message="tns:IToken_TestLink_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/GetDateTime" message="tns:IToken_GetDateTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/GetDateTimeResponse" message="tns:IToken_GetDateTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertToToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/InsertToToken" message="tns:IToken_InsertToToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/InsertToTokenResponse" message="tns:IToken_InsertToToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginOutGuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/LoginOutGuid" message="tns:IToken_LoginOutGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/LoginOutGuidResponse" message="tns:IToken_LoginOutGuid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPopedomByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/getPopedomByUser" message="tns:IToken_getPopedomByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/getPopedomByUserResponse" message="tns:IToken_getPopedomByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyIDByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/getCompanyIDByUser" message="tns:IToken_getCompanyIDByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/getCompanyIDByUserResponse" message="tns:IToken_getCompanyIDByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyIDByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/getCompanyIDByUserID" message="tns:IToken_getCompanyIDByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/getCompanyIDByUserIDResponse" message="tns:IToken_getCompanyIDByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/ValidateGuid" message="tns:IToken_ValidateGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/ValidateGuidResponse" message="tns:IToken_ValidateGuid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByGUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/GetUserByGUID" message="tns:IToken_GetUserByGUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/GetUserByGUIDResponse" message="tns:IToken_GetUserByGUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupIDByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IToken/GetGroupIDByUserName" message="tns:IToken_GetGroupIDByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IToken/GetGroupIDByUserNameResponse" message="tns:IToken_GetGroupIDByUserName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProxy">
+    <wsdl:operation name="GetProtyByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetProtyByID" message="tns:IProxy_GetProtyByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetProtyByIDResponse" message="tns:IProxy_GetProtyByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProxy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/AddProxy" message="tns:IProxy_AddProxy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/AddProxyResponse" message="tns:IProxy_AddProxy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProxy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/ModifyProxy" message="tns:IProxy_ModifyProxy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/ModifyProxyResponse" message="tns:IProxy_ModifyProxy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/UpdateByID" message="tns:IProxy_UpdateByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/UpdateByIDResponse" message="tns:IProxy_UpdateByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEndDate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetEndDate" message="tns:IProxy_GetEndDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetEndDateResponse" message="tns:IProxy_GetEndDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPopedom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetPopedom" message="tns:IProxy_GetPopedom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetPopedomResponse" message="tns:IProxy_GetPopedom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppPopedom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetAppPopedom" message="tns:IProxy_GetAppPopedom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetAppPopedomResponse" message="tns:IProxy_GetAppPopedom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetAllByUser" message="tns:IProxy_GetAllByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetAllByUserResponse" message="tns:IProxy_GetAllByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByUserNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetAllByUserNew" message="tns:IProxy_GetAllByUserNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetAllByUserNewResponse" message="tns:IProxy_GetAllByUserNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPopedom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetReportPopedom" message="tns:IProxy_GetReportPopedom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetReportPopedomResponse" message="tns:IProxy_GetReportPopedom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportByAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProxy/GetReportByAgent" message="tns:IProxy_GetReportByAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProxy/GetReportByAgentResponse" message="tns:IProxy_GetReportByAgent_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUser">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/Login" message="tns:IUser_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/LoginResponse" message="tns:IUser_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActingLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/ActingLogin" message="tns:IUser_ActingLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/ActingLoginResponse" message="tns:IUser_ActingLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetAll" message="tns:IUser_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetAllResponse" message="tns:IUser_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetAllNew" message="tns:IUser_GetAllNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetAllNewResponse" message="tns:IUser_GetAllNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWithDeleted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetAllWithDeleted" message="tns:IUser_GetAllWithDeleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetAllWithDeletedResponse" message="tns:IUser_GetAllWithDeleted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUserByName" message="tns:IUser_GetUserByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUserByNameResponse" message="tns:IUser_GetUserByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUser" message="tns:IUser_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUserResponse" message="tns:IUser_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/Add" message="tns:IUser_Add_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/AddResponse" message="tns:IUser_Add_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Modify">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/Modify" message="tns:IUser_Modify_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/ModifyResponse" message="tns:IUser_Modify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/Delete" message="tns:IUser_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/DeleteResponse" message="tns:IUser_Delete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/Close" message="tns:IUser_Close_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/CloseResponse" message="tns:IUser_Close_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModulePermissions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetModulePermissions" message="tns:IUser_GetModulePermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetModulePermissionsResponse" message="tns:IUser_GetModulePermissions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByApp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUserByApp" message="tns:IUser_GetUserByApp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUserByAppResponse" message="tns:IUser_GetUserByApp_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAuthorizedLog">
+    <wsdl:operation name="GetAuthorizedLogInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthorizedLog/GetAuthorizedLogInfoList" message="tns:IAuthorizedLog_GetAuthorizedLogInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthorizedLog/GetAuthorizedLogInfoListResponse" message="tns:IAuthorizedLog_GetAuthorizedLogInfoList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMenu">
+    <wsdl:operation name="GetMenuByModuleName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMenu/GetMenuByModuleName" message="tns:IMenu_GetMenuByModuleName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMenu/GetMenuByModuleNameResponse" message="tns:IMenu_GetMenuByModuleName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IApplicationModule" type="tns:IApplicationModule">
+    <wsp:PolicyReference URI="#WSHttpBinding_IApplicationModule_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApplicationModule">
+      <soap12:operation soapAction="http://tempuri.org/IApplicationModule/GetApplicationModule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModuleInApplication">
+      <soap12:operation soapAction="http://tempuri.org/IApplicationModule/ModuleInApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationByModule">
+      <soap12:operation soapAction="http://tempuri.org/IApplicationModule/GetApplicationByModule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplicationAddMoudles">
+      <soap12:operation soapAction="http://tempuri.org/IApplicationModule/ApplicationAddMoudles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplicationRemoveMoudles">
+      <soap12:operation soapAction="http://tempuri.org/IApplicationModule/ApplicationRemoveMoudles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IApplication" type="tns:IApplication">
+    <wsp:PolicyReference URI="#WSHttpBinding_IApplication_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApplicationByID">
+      <soap12:operation soapAction="http://tempuri.org/IApplication/GetApplicationByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationList">
+      <soap12:operation soapAction="http://tempuri.org/IApplication/GetApplicationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddApplication">
+      <soap12:operation soapAction="http://tempuri.org/IApplication/AddApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyApplication">
+      <soap12:operation soapAction="http://tempuri.org/IApplication/ModifyApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteApplication">
+      <soap12:operation soapAction="http://tempuri.org/IApplication/DeleteApplication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IModule" type="tns:IModule">
+    <wsp:PolicyReference URI="#WSHttpBinding_IModule_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetModuleByID">
+      <soap12:operation soapAction="http://tempuri.org/IModule/GetModuleByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModuleList">
+      <soap12:operation soapAction="http://tempuri.org/IModule/GetModuleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyModule">
+      <soap12:operation soapAction="http://tempuri.org/IModule/ModifyModule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IRole" type="tns:IRole">
+    <wsp:PolicyReference URI="#WSHttpBinding_IRole_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoleByID">
+      <soap12:operation soapAction="http://tempuri.org/IRole/GetRoleByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleList">
+      <soap12:operation soapAction="http://tempuri.org/IRole/GetRoleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseRole">
+      <soap12:operation soapAction="http://tempuri.org/IRole/CloseRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRole">
+      <soap12:operation soapAction="http://tempuri.org/IRole/AddRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyRole">
+      <soap12:operation soapAction="http://tempuri.org/IRole/ModifyRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRole">
+      <soap12:operation soapAction="http://tempuri.org/IRole/DeleteRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleIDByLoginUser">
+      <soap12:operation soapAction="http://tempuri.org/IRole/GetRoleIDByLoginUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IRolePermission" type="tns:IRolePermission">
+    <wsp:PolicyReference URI="#WSHttpBinding_IRolePermission_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRolePermission">
+      <soap12:operation soapAction="http://tempuri.org/IRolePermission/GetRolePermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrantRolePermissions">
+      <soap12:operation soapAction="http://tempuri.org/IRolePermission/GrantRolePermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetracRolePermissions">
+      <soap12:operation soapAction="http://tempuri.org/IRolePermission/RetracRolePermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IPermission" type="tns:IPermission">
+    <wsp:PolicyReference URI="#WSHttpBinding_IPermission_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPermission">
+      <soap12:operation soapAction="http://tempuri.org/IPermission/GetPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionList">
+      <soap12:operation soapAction="http://tempuri.org/IPermission/GetPermissionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPermission">
+      <soap12:operation soapAction="http://tempuri.org/IPermission/AddPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyPermission">
+      <soap12:operation soapAction="http://tempuri.org/IPermission/ModifyPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserPermission">
+      <soap12:operation soapAction="http://tempuri.org/IPermission/GetUserPermission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_ICompany" type="tns:ICompany">
+    <wsp:PolicyReference URI="#WSHttpBinding_ICompany_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCompanyByID">
+      <soap12:operation soapAction="http://tempuri.org/ICompany/GetCompanyByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyList">
+      <soap12:operation soapAction="http://tempuri.org/ICompany/GetCompanyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCompany">
+      <soap12:operation soapAction="http://tempuri.org/ICompany/AddCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyCompany">
+      <soap12:operation soapAction="http://tempuri.org/ICompany/ModifyCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCompany">
+      <soap12:operation soapAction="http://tempuri.org/ICompany/DeleteCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyListFlag">
+      <soap12:operation soapAction="http://tempuri.org/ICompany/GetCompanyListFlag" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IDepartment" type="tns:IDepartment">
+    <wsp:PolicyReference URI="#WSHttpBinding_IDepartment_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDepartmentByID">
+      <soap12:operation soapAction="http://tempuri.org/IDepartment/GetDepartmentByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentListByName">
+      <soap12:operation soapAction="http://tempuri.org/IDepartment/GetDepartmentListByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDepartment">
+      <soap12:operation soapAction="http://tempuri.org/IDepartment/AddDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyDepartment">
+      <soap12:operation soapAction="http://tempuri.org/IDepartment/ModifyDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <soap12:operation soapAction="http://tempuri.org/IDepartment/DeleteDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IGroup" type="tns:IGroup">
+    <wsp:PolicyReference URI="#WSHttpBinding_IGroup_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetGroupByID">
+      <soap12:operation soapAction="http://tempuri.org/IGroup/GetGroupByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupList">
+      <soap12:operation soapAction="http://tempuri.org/IGroup/GetGroupList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyGroupList">
+      <soap12:operation soapAction="http://tempuri.org/IGroup/GetMyGroupList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap12:operation soapAction="http://tempuri.org/IGroup/AddGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyGroup">
+      <soap12:operation soapAction="http://tempuri.org/IGroup/ModifyGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap12:operation soapAction="http://tempuri.org/IGroup/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IRoleDetail" type="tns:IRoleDetail">
+    <wsp:PolicyReference URI="#WSHttpBinding_IRoleDetail_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoleDetailByUser">
+      <soap12:operation soapAction="http://tempuri.org/IRoleDetail/GetRoleDetailByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleDetailByID">
+      <soap12:operation soapAction="http://tempuri.org/IRoleDetail/GetRoleDetailByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoleDetailList">
+      <soap12:operation soapAction="http://tempuri.org/IRoleDetail/GetRoleDetailList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRoleDetail">
+      <soap12:operation soapAction="http://tempuri.org/IRoleDetail/AddRoleDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyRoleDetail">
+      <soap12:operation soapAction="http://tempuri.org/IRoleDetail/ModifyRoleDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoleDetail">
+      <soap12:operation soapAction="http://tempuri.org/IRoleDetail/DeleteRoleDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IUserRole" type="tns:IUserRole">
+    <wsp:PolicyReference URI="#WSHttpBinding_IUserRole_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserRole">
+      <soap12:operation soapAction="http://tempuri.org/IUserRole/GetUserRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GrantUserRoles">
+      <soap12:operation soapAction="http://tempuri.org/IUserRole/GrantUserRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetracUserRoles">
+      <soap12:operation soapAction="http://tempuri.org/IUserRole/RetracUserRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoleByApp">
+      <soap12:operation soapAction="http://tempuri.org/IUserRole/GetUserRoleByApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IToken" type="tns:IToken">
+    <wsp:PolicyReference URI="#WSHttpBinding_IToken_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestLink">
+      <soap12:operation soapAction="http://tempuri.org/IToken/TestLink" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDateTime">
+      <soap12:operation soapAction="http://tempuri.org/IToken/GetDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertToToken">
+      <soap12:operation soapAction="http://tempuri.org/IToken/InsertToToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginOutGuid">
+      <soap12:operation soapAction="http://tempuri.org/IToken/LoginOutGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPopedomByUser">
+      <soap12:operation soapAction="http://tempuri.org/IToken/getPopedomByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyIDByUser">
+      <soap12:operation soapAction="http://tempuri.org/IToken/getCompanyIDByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompanyIDByUserID">
+      <soap12:operation soapAction="http://tempuri.org/IToken/getCompanyIDByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGuid">
+      <soap12:operation soapAction="http://tempuri.org/IToken/ValidateGuid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByGUID">
+      <soap12:operation soapAction="http://tempuri.org/IToken/GetUserByGUID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupIDByUserName">
+      <soap12:operation soapAction="http://tempuri.org/IToken/GetGroupIDByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IProxy" type="tns:IProxy">
+    <wsp:PolicyReference URI="#WSHttpBinding_IProxy_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProtyByID">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/GetProtyByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProxy">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/AddProxy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProxy">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/ModifyProxy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateByID">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/UpdateByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEndDate">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/GetEndDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPopedom">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/GetPopedom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppPopedom">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/GetAppPopedom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByUser">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/GetAllByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllByUserNew">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/GetAllByUserNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportPopedom">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/GetReportPopedom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportByAgent">
+      <soap12:operation soapAction="http://tempuri.org/IProxy/GetReportByAgent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IUser" type="tns:IUser">
+    <wsp:PolicyReference URI="#WSHttpBinding_IUser_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IUser/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActingLogin">
+      <soap12:operation soapAction="http://tempuri.org/IUser/ActingLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <soap12:operation soapAction="http://tempuri.org/IUser/GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNew">
+      <soap12:operation soapAction="http://tempuri.org/IUser/GetAllNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllWithDeleted">
+      <soap12:operation soapAction="http://tempuri.org/IUser/GetAllWithDeleted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByName">
+      <soap12:operation soapAction="http://tempuri.org/IUser/GetUserByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <soap12:operation soapAction="http://tempuri.org/IUser/GetUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/IUser/Add" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modify">
+      <soap12:operation soapAction="http://tempuri.org/IUser/Modify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap12:operation soapAction="http://tempuri.org/IUser/Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <soap12:operation soapAction="http://tempuri.org/IUser/Close" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModulePermissions">
+      <soap12:operation soapAction="http://tempuri.org/IUser/GetModulePermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByApp">
+      <soap12:operation soapAction="http://tempuri.org/IUser/GetUserByApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IAuthorizedLog" type="tns:IAuthorizedLog">
+    <wsp:PolicyReference URI="#WSHttpBinding_IAuthorizedLog_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAuthorizedLogInfoList">
+      <soap12:operation soapAction="http://tempuri.org/IAuthorizedLog/GetAuthorizedLogInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IMenu" type="tns:IMenu">
+    <wsp:PolicyReference URI="#WSHttpBinding_IMenu_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMenuByModuleName">
+      <soap12:operation soapAction="http://tempuri.org/IMenu/GetMenuByModuleName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceControler">
+    <wsdl:port name="WSHttpBinding_IApplicationModule" binding="tns:WSHttpBinding_IApplicationModule">
+      <soap12:address location="http://localhost:8888/ServiceControler/ApplicationModule" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/ApplicationModule</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IApplication" binding="tns:WSHttpBinding_IApplication">
+      <soap12:address location="http://localhost:8888/ServiceControler/Application" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Application</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IModule" binding="tns:WSHttpBinding_IModule">
+      <soap12:address location="http://localhost:8888/ServiceControler/Module" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Module</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IRole" binding="tns:WSHttpBinding_IRole">
+      <soap12:address location="http://localhost:8888/ServiceControler/Role" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Role</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IRolePermission" binding="tns:WSHttpBinding_IRolePermission">
+      <soap12:address location="http://localhost:8888/ServiceControler/RolePermission" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/RolePermission</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IPermission" binding="tns:WSHttpBinding_IPermission">
+      <soap12:address location="http://localhost:8888/ServiceControler/Permission" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Permission</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_ICompany" binding="tns:WSHttpBinding_ICompany">
+      <soap12:address location="http://localhost:8888/ServiceControler/Company" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Company</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IDepartment" binding="tns:WSHttpBinding_IDepartment">
+      <soap12:address location="http://localhost:8888/ServiceControler/Department" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Department</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IGroup" binding="tns:WSHttpBinding_IGroup">
+      <soap12:address location="http://localhost:8888/ServiceControler/Group" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Group</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IRoleDetail" binding="tns:WSHttpBinding_IRoleDetail">
+      <soap12:address location="http://localhost:8888/ServiceControler/RoleDetail" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/RoleDetail</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IUserRole" binding="tns:WSHttpBinding_IUserRole">
+      <soap12:address location="http://localhost:8888/ServiceControler/UserRole" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/UserRole</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IToken" binding="tns:WSHttpBinding_IToken">
+      <soap12:address location="http://localhost:8888/ServiceControler/Token" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Token</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IProxy" binding="tns:WSHttpBinding_IProxy">
+      <soap12:address location="http://localhost:8888/ServiceControler/Proxy" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Proxy</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IUser" binding="tns:WSHttpBinding_IUser">
+      <soap12:address location="http://localhost:8888/ServiceControler/User" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/User</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IAuthorizedLog" binding="tns:WSHttpBinding_IAuthorizedLog">
+      <soap12:address location="http://localhost:8888/ServiceControler/AuthorizedLog" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/AuthorizedLog</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IMenu" binding="tns:WSHttpBinding_IMenu">
+      <soap12:address location="http://localhost:8888/ServiceControler/Menu" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8888/ServiceControler/Menu</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

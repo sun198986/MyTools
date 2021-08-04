@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MUAS.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MUAS.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8888/ServiceControler?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ApplicationModuleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationInfo" nillable="true" type="tns:ApplicationInfo" />
+      <xs:element minOccurs="0" name="ModuleInfos" nillable="true" type="tns:ArrayOfModuleInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationModuleInfo" nillable="true" type="tns:ApplicationModuleInfo" />
+  <xs:complexType name="ApplicationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplicationID" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationInfo" nillable="true" type="tns:ApplicationInfo" />
+  <xs:complexType name="ArrayOfModuleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModuleInfo" nillable="true" type="tns:ModuleInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModuleInfo" nillable="true" type="tns:ArrayOfModuleInfo" />
+  <xs:complexType name="ModuleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanCreate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanModify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanQuery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanUnApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FuncationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasUnderline" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsClose" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MenuName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentID" type="xs:int" />
+      <xs:element minOccurs="0" name="Seq" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModuleInfo" nillable="true" type="tns:ModuleInfo" />
+  <xs:complexType name="ArrayOfApplicationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApplicationInfo" nillable="true" type="tns:ApplicationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicationInfo" nillable="true" type="tns:ArrayOfApplicationInfo" />
+  <xs:complexType name="RoleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsClose" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LEVELS" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+  <xs:complexType name="ArrayOfRoleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleInfo" nillable="true" type="tns:ArrayOfRoleInfo" />
+  <xs:complexType name="RolePermissionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PermissionInfos" nillable="true" type="tns:ArrayOfPermissionInfo" />
+      <xs:element minOccurs="0" name="RoleDetailInfo" nillable="true" type="tns:RoleDetailInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RolePermissionInfo" nillable="true" type="tns:RolePermissionInfo" />
+  <xs:complexType name="ArrayOfPermissionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PermissionInfo" nillable="true" type="tns:PermissionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermissionInfo" nillable="true" type="tns:ArrayOfPermissionInfo" />
+  <xs:complexType name="PermissionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AppID" type="xs:int" />
+      <xs:element minOccurs="0" name="AppName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanCreate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanModify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanQuery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanUnApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanCreate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanModify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanOther1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanOther2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanOther3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanQuery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCanUnApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PermssionID" type="xs:int" />
+      <xs:element minOccurs="0" name="RoleDetailID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PermissionInfo" nillable="true" type="tns:PermissionInfo" />
+  <xs:complexType name="RoleDetailInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyInfo" nillable="true" type="tns:CompanyInfo" />
+      <xs:element minOccurs="0" name="DepartmentInfo" nillable="true" type="tns:DepartmentInfo" />
+      <xs:element minOccurs="0" name="GroupInfo" nillable="true" type="tns:GroupInfo" />
+      <xs:element minOccurs="0" name="RoleDetailID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleDetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleInfo" nillable="true" type="tns:RoleInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleDetailInfo" nillable="true" type="tns:RoleDetailInfo" />
+  <xs:complexType name="CompanyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsCompany" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RDSLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RdsCompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RdsDatabasePara" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:CompanyInfo.TypeValue" />
+      <xs:element minOccurs="0" name="UFDataLink" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompanyInfo" nillable="true" type="tns:CompanyInfo" />
+  <xs:simpleType name="CompanyInfo.TypeValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="不明" />
+      <xs:enumeration value="分公司" />
+      <xs:enumeration value="代理商" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CompanyInfo.TypeValue" nillable="true" type="tns:CompanyInfo.TypeValue" />
+  <xs:complexType name="DepartmentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeptID" type="xs:int" />
+      <xs:element minOccurs="0" name="Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentInfo" nillable="true" type="tns:DepartmentInfo" />
+  <xs:complexType name="GroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RDSLinkCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupInfo" nillable="true" type="tns:GroupInfo" />
+  <xs:complexType name="UserPermissionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRoleList" nillable="true" type="tns:ArrayOfUserRoleInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserPermissionInfo" nillable="true" type="tns:UserPermissionInfo" />
+  <xs:complexType name="ArrayOfUserRoleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserRoleInfo" nillable="true" type="tns:UserRoleInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserRoleInfo" nillable="true" type="tns:ArrayOfUserRoleInfo" />
+  <xs:complexType name="UserRoleInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="Dept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptID" type="xs:int" />
+      <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProxeyedUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleDetailID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleDetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleID" type="xs:int" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserRoleID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserRoleInfo" nillable="true" type="tns:UserRoleInfo" />
+  <xs:complexType name="ArrayOfCompanyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompanyInfo" nillable="true" type="tns:CompanyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompanyInfo" nillable="true" type="tns:ArrayOfCompanyInfo" />
+  <xs:complexType name="ArrayOfDepartmentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DepartmentInfo" nillable="true" type="tns:DepartmentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartmentInfo" nillable="true" type="tns:ArrayOfDepartmentInfo" />
+  <xs:complexType name="ArrayOfGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupInfo" nillable="true" type="tns:GroupInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupInfo" nillable="true" type="tns:ArrayOfGroupInfo" />
+  <xs:complexType name="ArrayOfRoleDetailInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleDetailInfo" nillable="true" type="tns:RoleDetailInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleDetailInfo" nillable="true" type="tns:ArrayOfRoleDetailInfo" />
+  <xs:complexType name="ProxyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanCreate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanModify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanQuery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanUnApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Company" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyID" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptID" type="xs:int" />
+      <xs:element minOccurs="0" name="EndDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupID" type="xs:int" />
+      <xs:element minOccurs="0" name="MenuName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyID" type="xs:int" />
+      <xs:element minOccurs="0" name="ProxyUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProxyedUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleDetailID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleDetailName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProxyInfo" nillable="true" type="tns:ProxyInfo" />
+  <xs:complexType name="ArrayOfProxyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProxyInfo" nillable="true" type="tns:ProxyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProxyInfo" nillable="true" type="tns:ArrayOfProxyInfo" />
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BirthDay" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" type="tns:UserInfo.Gender" />
+      <xs:element minOccurs="0" name="Status" type="tns:UserInfo.StatusType" />
+      <xs:element minOccurs="0" name="Tel1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tel2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="tns:UserInfo.UserType" />
+      <xs:element minOccurs="0" name="UserFull" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
+  <xs:simpleType name="UserInfo.Gender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="男" />
+      <xs:enumeration value="女" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserInfo.Gender" nillable="true" type="tns:UserInfo.Gender" />
+  <xs:simpleType name="UserInfo.StatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="正常" />
+      <xs:enumeration value="关闭" />
+      <xs:enumeration value="删除" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserInfo.StatusType" nillable="true" type="tns:UserInfo.StatusType" />
+  <xs:simpleType name="UserInfo.UserType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="普通用户" />
+      <xs:enumeration value="管理员" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserInfo.UserType" nillable="true" type="tns:UserInfo.UserType" />
+  <xs:complexType name="ArrayOfUserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="tns:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserInfo" nillable="true" type="tns:ArrayOfUserInfo" />
+  <xs:complexType name="ArrayOfModulePermissionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModulePermissionInfo" nillable="true" type="tns:ModulePermissionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModulePermissionInfo" nillable="true" type="tns:ArrayOfModulePermissionInfo" />
+  <xs:complexType name="ModulePermissionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanCreate" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanDelete" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanModify" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther1" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanOther3" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanQuery" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CanUnApproval" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MenuName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModuleName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RoleDetailIDList" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModulePermissionInfo" nillable="true" type="tns:ModulePermissionInfo" />
+  <xs:complexType name="ArrayOfAuthorizedLogInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AuthorizedLogInfo" nillable="true" type="tns:AuthorizedLogInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthorizedLogInfo" nillable="true" type="tns:ArrayOfAuthorizedLogInfo" />
+  <xs:complexType name="AuthorizedLogInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivityType" type="tns:AuthorizedLogInfo.ActivityTypeValue" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LogID" type="xs:int" />
+      <xs:element minOccurs="0" name="OperatorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleDetail" nillable="true" type="tns:RoleDetailInfo" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthorizedLogInfo" nillable="true" type="tns:AuthorizedLogInfo" />
+  <xs:simpleType name="AuthorizedLogInfo.ActivityTypeValue">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="普通授权" />
+      <xs:enumeration value="代理授权" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuthorizedLogInfo.ActivityTypeValue" nillable="true" type="tns:AuthorizedLogInfo.ActivityTypeValue" />
+  <xs:complexType name="MenuInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DLL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MenuID" type="xs:int" />
+      <xs:element minOccurs="0" name="ModuleID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuInfo" nillable="true" type="tns:MenuInfo" />
+</xs:schema>

@@ -15,26 +15,22 @@ namespace Framework.HttpClientUtil
     {
         static void Main(string[] args)
         {
-            HttpClientCommit hcc = new HttpClientCommit();
-            //string currDir = AppDomain.CurrentDomain.BaseDirectory;
-            //string fileFullName = string.Format(@"{0}Demo\国医检（设）字GYJ2020第3169号(1).docx", currDir);
-            //hcc.PostFormFilesAndParam(@"http://localhost:15280/User/Login", "");
-            //hcc.GetAsync("http://localhost:5000/api/regist?search=Address:3&orderby=Address");
-
-            var http = new HttpHelp();
-
-            var tasks = new List<Task>();
-
-            for (int i = 0; i < 100; i++)
-            {
-                var i1 = i;
-                
-                var task1 = Task.Factory.StartNew(http.TestPost);
-                tasks.Add(task1);
-            }
-
-            Task.WaitAny(tasks.ToArray());
-
+            var client = new RestClient("http://10.236.198.173:8101/User/Login");
+            client.Timeout = -1;
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/problem+json");
+            var body = @"{
+" + "\n" +
+            @"    ""LoginName"":""MASSVSC"",
+" + "\n" +
+            @"    ""Password"":""123"",
+" + "\n" +
+            @"    ""DeviceId"":""""
+" + "\n" +
+            @"}";
+            request.AddParameter("application/problem+json", body, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+            Console.WriteLine(response.Content);
             Console.ReadLine();
         }
 

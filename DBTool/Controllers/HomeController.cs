@@ -34,7 +34,7 @@ namespace DBTool.Controllers
             {
                 ViewBag.TabSchema = syscatTable.TabSchema;
                 ViewBag.TabName = syscatTable.TabName;
-                list = await _context.QueryAsync<SyscatTable>($"select TABSCHEMA,TABNAME from syscat.tables where TABSCHEMA='{syscatTable.TabSchema}' and TABNAME='{syscatTable.TabName}';");
+                list = await _context.QueryAsync<SyscatTable>($"select TABSCHEMA,TABNAME from syscat.tables where TABSCHEMA='{syscatTable.TabSchema}' and TABNAME like '%{syscatTable.TabName}%';");
             }
             ViewBag.TempList = list;
             return View();
