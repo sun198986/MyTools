@@ -114,3 +114,4 @@
 /DBTool/bin/Release/netcoreapp3.1
 /WCFClient/obj/Release
 /WCFClient/bin/Release
+/WCFClient/obj/Debug
